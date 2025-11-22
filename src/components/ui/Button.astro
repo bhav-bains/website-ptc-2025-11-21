@@ -1,0 +1,48 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'white' | 'glass';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  [key: string]: any;
+}
+
+const { 
+  href, 
+  variant = 'primary', 
+  size = 'md', 
+  class: className, 
+  ...rest 
+} = Astro.props;
+
+const variants = {
+  primary: 'bg-ptc-green text-white hover:bg-ptc-green-dark shadow-lg hover:shadow-xl border border-transparent',
+  secondary: 'bg-ptc-teal text-white hover:bg-ptc-teal-dark shadow-lg hover:shadow-xl border border-transparent',
+  outline: 'border-2 border-ptc-green text-ptc-green hover:bg-ptc-green-50',
+  ghost: 'text-ptc-green hover:bg-ptc-green-50',
+  white: 'bg-white text-gray-900 hover:bg-gray-100 shadow-xl hover:shadow-2xl border border-transparent',
+  glass: 'bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 shadow-xl hover:shadow-2xl',
+};
+
+const sizes = {
+  sm: 'px-6 py-2 text-sm',
+  md: 'px-8 py-3 text-base',
+  lg: 'px-10 py-4 text-lg',
+};
+
+const baseStyles = 'inline-flex items-center justify-center font-barlow font-bold rounded-full transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ptc-green disabled:opacity-50 disabled:cursor-not-allowed';
+
+const styles = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className || ''}`;
+---
+
+{
+  href ? (
+    <a href={href} class={styles} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button class={styles} {...rest}>
+      <slot />
+    </button>
+  )
+}

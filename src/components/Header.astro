@@ -1,97 +1,53 @@
 ---
 import { Menu, X } from 'lucide-react';
+import Button from './ui/Button.astro';
 ---
 
-<header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm backdrop-blur-sm bg-white/95">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="absolute top-0 left-0 w-full z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20 sm:h-24">
+      <!-- Logo -->
       <div class="flex items-center">
-        <a href="#home" class="block">
+        <a href="/" class="flex items-center gap-2 group">
           <img
             src="/Logo - Personal Touch Courier.png"
             alt="Personal Touch Courier"
-            class="h-16 sm:h-20 w-auto hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+            class="h-10 w-auto brightness-0 invert"
           />
+          <span class="text-white font-barlow font-bold text-xl tracking-tight">Personal Touch Courier</span>
         </a>
       </div>
 
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="#home" class="text-gray-700 hover:text-ptc-green transition-colors font-medium">
-          Home
-        </a>
-        <a href="#about" class="text-gray-700 hover:text-ptc-green transition-colors font-medium">
-          About
-        </a>
-        <a href="#services" class="text-gray-700 hover:text-ptc-green transition-colors font-medium">
-          Services
-        </a>
-        <a href="#contact" class="text-gray-700 hover:text-ptc-green transition-colors font-medium">
-          Contact
-        </a>
-        <a href="#blog" class="text-gray-700 hover:text-ptc-green transition-colors font-medium">
-          Blog
-        </a>
-        <a
-          href="https://personaltouchcourier.dsapp.io/Account/Login"
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+        <a href="/services" class="text-sm font-medium text-gray-200 hover:text-white transition-colors">Services</a>
+        <a href="/pricing" class="text-sm font-medium text-gray-200 hover:text-white transition-colors">Pricing</a>
+        <a href="/about" class="text-sm font-medium text-gray-200 hover:text-white transition-colors">About Us</a>
+        <a href="/contact" class="text-sm font-medium text-gray-200 hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="hidden md:flex items-center space-x-3">
+        <Button 
+          href="https://login.dispatchscience.com" 
           target="_blank"
-          rel="noopener noreferrer"
-          class="px-4 py-2 border-2 border-ptc-green text-ptc-green rounded-ptc hover:bg-ptc-green hover:text-white transition-all font-medium"
+          variant="glass"
+          size="sm"
+          class="font-bold"
         >
           Login
-        </a>
+        </Button>
+        <Button 
+          href="#signup" 
+          variant="primary"
+          size="sm"
+          class="font-bold text-gray-900"
+        >
+          Sign Up
+        </Button>
       </div>
-
-      <button
-        id="mobile-menu-button"
-        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-        aria-label="Toggle menu"
-      >
-        <Menu size={24} id="menu-open" />
-        <X size={24} id="menu-close" class="hidden" />
-      </button>
     </div>
-
-    <div id="mobile-menu" class="hidden md:hidden py-4 space-y-3 border-t">
-      <a
-        href="#home"
-        class="block px-4 py-2 text-gray-700 hover:bg-ptc-beige rounded-lg transition-colors font-medium mobile-menu-link"
-      >
-        Home
-      </a>
-      <a
-        href="#about"
-        class="block px-4 py-2 text-gray-700 hover:bg-ptc-beige rounded-lg transition-colors font-medium mobile-menu-link"
-      >
-        About
-      </a>
-      <a
-        href="#services"
-        class="block px-4 py-2 text-gray-700 hover:bg-ptc-beige rounded-lg transition-colors font-medium mobile-menu-link"
-      >
-        Services
-      </a>
-      <a
-        href="#contact"
-        class="block px-4 py-2 text-gray-700 hover:bg-ptc-beige rounded-lg transition-colors font-medium mobile-menu-link"
-      >
-        Contact
-      </a>
-      <a
-        href="#blog"
-        class="block px-4 py-2 text-gray-700 hover:bg-ptc-beige rounded-lg transition-colors font-medium mobile-menu-link"
-      >
-        Blog
-      </a>
-      <a
-        href="https://personaltouchcourier.dsapp.io/Account/Login"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block mx-4 px-4 py-2 bg-ptc-green text-white rounded-ptc hover:bg-ptc-teal transition-colors text-center font-medium"
-      >
-        Login
-      </a>
-    </div>
-  </nav>
+  </div>
 </header>
 
 <script>

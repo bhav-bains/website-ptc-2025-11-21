@@ -1,0 +1,28 @@
+---
+interface Props {
+  class?: string;
+  background?: 'white' | 'gray' | 'green' | 'dark';
+  container?: boolean;
+}
+
+const { class: className, background = 'white', container = true } = Astro.props;
+
+const backgrounds = {
+  white: 'bg-white',
+  gray: 'bg-ptc-beige',
+  green: 'bg-ptc-green text-white',
+  dark: 'bg-ptc-blue text-white',
+};
+
+const styles = `py-20 lg:py-28 relative overflow-hidden ${backgrounds[background]} ${className || ''}`;
+---
+
+<section class={styles}>
+  {container ? (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <slot />
+    </div>
+  ) : (
+    <slot />
+  )}
+</section>

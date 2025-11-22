@@ -1,79 +1,121 @@
 ---
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
 ---
 
-<footer class="bg-ptc-green text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+<footer class="bg-ptc-green text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <!-- Brand Column -->
       <div>
         <img
           src="/Logo - Personal Touch Courier.png"
           alt="Personal Touch Courier"
-          class="h-20 w-auto mb-4"
+          class="h-16 w-auto mb-6 bg-white rounded-lg p-2"
         />
-        <p class="text-gray-100 mb-4 font-barlow font-semibold text-lg">Canadian-First. Customer-Focused.</p>
-        <p class="text-base text-gray-300 leading-relaxed">
-          Ottawa's trusted delivery partner — fast, reliable, and dedicated to getting it done for you.
+        <p class="text-ptc-green-100 mb-6 font-medium text-lg">
+          Canadian-First. Customer-Focused.
         </p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-white hover:text-ptc-teal-light transition-colors">
+            <Facebook class="w-6 h-6" />
+            <span class="sr-only">Facebook</span>
+          </a>
+          <a href="#" class="text-white hover:text-ptc-teal-light transition-colors">
+            <Linkedin class="w-6 h-6" />
+            <span class="sr-only">LinkedIn</span>
+          </a>
+          <a href="#" class="text-white hover:text-ptc-teal-light transition-colors">
+            <Instagram class="w-6 h-6" />
+            <span class="sr-only">Instagram</span>
+          </a>
+        </div>
       </div>
 
+      <!-- Quick Links -->
       <div>
-        <h4 class="text-xl font-barlow font-semibold mb-6 text-white">Quick Links</h4>
-        <ul class="space-y-3">
+        <h3 class="text-lg font-barlow font-bold mb-6 text-white">Quick Links</h3>
+        <ul class="space-y-4">
           <li>
-            <a href="#home" class="text-gray-300 hover:text-white transition-colors">
+            <a href="/" class="text-ptc-green-100 hover:text-white transition-colors flex items-center gap-2">
               Home
             </a>
           </li>
           <li>
-            <a href="#about" class="text-gray-300 hover:text-white transition-colors">
+            <a href="/about" class="text-ptc-green-100 hover:text-white transition-colors flex items-center gap-2">
               About
             </a>
           </li>
           <li>
-            <a href="#services" class="text-gray-300 hover:text-white transition-colors">
+            <a href="/services" class="text-ptc-green-100 hover:text-white transition-colors flex items-center gap-2">
               Services
             </a>
           </li>
           <li>
-            <a href="#blog" class="text-gray-300 hover:text-white transition-colors">
+            <a href="/blog" class="text-ptc-green-100 hover:text-white transition-colors flex items-center gap-2">
               Blog
             </a>
           </li>
           <li>
-            <a href="#contact" class="text-gray-300 hover:text-white transition-colors">
+            <a href="/contact" class="text-ptc-green-100 hover:text-white transition-colors flex items-center gap-2">
               Contact
             </a>
           </li>
         </ul>
       </div>
 
+      <!-- Services -->
       <div>
-        <h4 class="text-xl font-barlow font-semibold mb-6 text-white">Contact Us</h4>
-        <div class="space-y-4">
-          <div class="flex items-start gap-3">
-            <MapPin size={20} class="mt-1 flex-shrink-0" />
-            <span class="text-gray-300">Ottawa, Ontario</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <Phone size={20} class="mt-1 flex-shrink-0" />
-            <a href="tel:+16137235891" class="text-gray-300 hover:text-white transition-colors">(613) 723-5891</a>
-          </div>
-          <div class="flex items-start gap-3">
-            <Mail size={20} class="mt-1 flex-shrink-0" />
-            <a
-              href="mailto:ops@personaltouchcourier.com"
-              class="text-gray-300 hover:text-white transition-colors"
-            >
-              ops@personaltouchcourier.com
+        <h3 class="text-lg font-barlow font-bold mb-6 text-white">Our Services</h3>
+        <ul class="space-y-4">
+          <li>
+            <a href="/services/local-courier-delivery-ottawa" class="text-ptc-green-100 hover:text-white transition-colors">
+              Local Courier Delivery
             </a>
-          </div>
-        </div>
+          </li>
+          <li>
+            <a href="/services/local-freight-delivery-ottawa" class="text-ptc-green-100 hover:text-white transition-colors">
+              Local Freight Delivery
+            </a>
+          </li>
+          <li>
+            <a href="/services/dedicated-transportation-ottawa" class="text-ptc-green-100 hover:text-white transition-colors">
+              Dedicated Transportation
+            </a>
+          </li>
+          <li>
+            <a href="/services/white-glove-logistics-ottawa" class="text-ptc-green-100 hover:text-white transition-colors">
+              White Glove Logistics
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-barlow font-bold mb-6 text-white">Contact Us</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-ptc-green-100">
+            <MapPin class="w-5 h-5 text-ptc-teal-light flex-shrink-0 mt-1" />
+            <span>Ottawa, Ontario</span>
+          </li>
+          <li>
+            <a href="tel:613-723-5891" class="flex items-center gap-3 text-ptc-green-100 hover:text-white transition-colors">
+              <Phone class="w-5 h-5 text-ptc-teal-light flex-shrink-0" />
+              <span>(613) 723-5891</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:ops@personaltouchcourier.com" class="flex items-center gap-3 text-ptc-green-100 hover:text-white transition-colors">
+              <Mail class="w-5 h-5 text-ptc-teal-light flex-shrink-0" />
+              <span>ops@personaltouchcourier.com</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <div class="border-t border-ptc-green-light/30 pt-10 text-center text-sm text-gray-200">
-      <p>&copy; 2025 Personal Touch Courier. All rights reserved. | Ottawa, Ontario, Canada</p>
+    <div class="border-t border-ptc-green-light/30 pt-8 text-center text-ptc-green-100 text-sm">
+      <p>&copy; {new Date().getFullYear()} Personal Touch Courier. All rights reserved.</p>
     </div>
   </div>
 </footer>

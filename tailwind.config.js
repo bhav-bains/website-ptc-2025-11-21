@@ -7,27 +7,34 @@ export default {
         'ptc-green': {
           DEFAULT: '#1F6A5A',
           dark: '#174D42',
-          light: '#2A8570',
+          DEFAULT: '#006B3F', // Primary Brand Color
+          light: '#008F54',
+          dark: '#004D2D',
+          50: '#F0FDF4',
+          100: '#DCFCE7',
+          900: '#14532D',
         },
         'ptc-teal': {
-          DEFAULT: '#3E8C80',
-          dark: '#2F6B62',
-          light: '#4FA798',
+          DEFAULT: '#00A896', // Secondary Accent
+          light: '#33B9AB',
+          dark: '#008577',
         },
         'ptc-beige': {
-          DEFAULT: '#F2E8D8',
-          dark: '#E5D5BE',
-          light: '#F8F2E8',
+          DEFAULT: '#F5F5F0', // Background Neutral
+          dark: '#E6E6E0',
         },
-        'ptc-ivory': '#FFFFFF',
+        'ptc-blue': {
+          DEFAULT: '#0F172A', // Dark Text/Heading
+          light: '#334155', // Body Text
+        }
       },
       fontFamily: {
-        'barlow': ['Barlow', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
-        'sans': ['Barlow', 'sans-serif'],
+        barlow: ['Barlow', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       borderRadius: {
-        'ptc': '12px',
+        'ptc': '0.5rem',
+        'ptc-lg': '1rem',
       },
       spacing: {
         '18': '4.5rem',
