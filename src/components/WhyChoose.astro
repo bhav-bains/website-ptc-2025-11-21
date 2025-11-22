@@ -1,0 +1,56 @@
+---
+import { Zap, Heart, MapPin, Hand } from 'lucide-react';
+
+const features = [
+  {
+    icon: Zap,
+    title: 'Fast & Reliable',
+    description: 'Same-day and scheduled deliveries you can count on — every time.',
+  },
+  {
+    icon: Heart,
+    title: 'Customer-First Service',
+    description: 'Real people, real support — your delivery always gets our full attention.',
+  },
+  {
+    icon: MapPin,
+    title: 'Local & Canadian-Owned',
+    description: 'Proudly built in Ottawa, supporting businesses in our own community.',
+  },
+  {
+    icon: Hand,
+    title: 'Ease of Access',
+    description: 'Simple online platform for booking, tracking, and managing your deliveries.',
+  },
+];
+---
+
+<section class="bg-white section-padding">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-barlow font-bold text-ptc-green mb-6">
+        Why Choose Personal Touch?
+      </h2>
+      <p class="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed-extra">
+        We're more than just a delivery service; we're your local partner dedicated to providing reliable and personalized solutions for all your courier needs.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+      {features.map((feature) => {
+        const Icon = feature.icon;
+        return (
+          <div class="p-8 bg-ptc-beige rounded-ptc hover:shadow-ptc transition-all duration-300 text-center group hover:-translate-y-1">
+            <div class="w-16 h-16 bg-ptc-green rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+              <Icon size={32} class="text-white" strokeWidth={2} />
+            </div>
+            <h3 class="text-xl font-barlow font-semibold text-gray-900 mb-3">
+              {feature.title}
+            </h3>
+            <p class="text-base text-gray-600 leading-relaxed">{feature.description}</p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

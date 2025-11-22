@@ -1,0 +1,235 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight } from 'lucide-react';
+---
+
+<Layout
+  title="Courier & Delivery Services in Ottawa | Personal Touch Courier"
+  description="Personal Touch Courier provides same-day courier services, freight delivery, dedicated transportation, and white glove logistics in Ottawa. Reliable, local, and customer-focused."
+>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-ptc-green text-white py-20 lg:py-28 overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-barlow font-bold mb-6 leading-tight">
+            Reliable Courier & Delivery Services for Ottawa Businesses
+          </h1>
+          <p class="text-xl text-gray-100 mb-10 leading-relaxed">
+            Fast, dependable, and handled with care — Personal Touch Courier offers same-day delivery, freight transport, dedicated routes, and special-care logistics for businesses across Ottawa.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-8 py-4 bg-white text-ptc-green rounded-ptc font-bold text-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Request a Quote
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-ptc font-bold text-lg hover:bg-white/10 transition-all"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-xl sm:text-2xl text-gray-700 leading-relaxed font-medium">
+          At Personal Touch Courier, we help Ottawa businesses move what matters most — quickly, safely, and with the personal care only a local team can offer. From urgent same-day parcels to dedicated transportation routes, our services are designed to keep your operations running smoothly and on time, every time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-barlow font-bold text-gray-900 mb-4">Our Core Services</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Below are the main courier and logistics services we offer in Ottawa. Each service is built on our promise of reliability, professionalism, and personal attention.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Service Card 1: Local Courier Delivery -->
+          <div class="bg-white rounded-2xl p-8 shadow-ptc hover:shadow-ptc-lg transition-all duration-300 border border-gray-100 group">
+            <div class="w-14 h-14 bg-ptc-green/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-ptc-green transition-colors">
+              <Package class="w-7 h-7 text-ptc-green group-hover:text-white transition-colors" />
+            </div>
+            <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-4">Local Courier Delivery</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Fast, flexible, and reliable delivery for envelopes, parcels, and important documents. Ideal for businesses that need same-day or scheduled delivery within the Ottawa region.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Same-day delivery available</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Direct, rush, and scheduled service options</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Real communication with our dispatch team</span>
+              </li>
+            </ul>
+            <a href="/services/local-courier-delivery-ottawa" class="inline-flex items-center text-ptc-green font-semibold hover:text-ptc-green-dark transition-colors group-hover:translate-x-1 duration-300">
+              Learn More <ArrowRight class="ml-2 w-4 h-4" />
+            </a>
+          </div>
+
+          <!-- Service Card 2: Local Freight Delivery -->
+          <div class="bg-white rounded-2xl p-8 shadow-ptc hover:shadow-ptc-lg transition-all duration-300 border border-gray-100 group">
+            <div class="w-14 h-14 bg-ptc-green/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-ptc-green transition-colors">
+              <Truck class="w-7 h-7 text-ptc-green group-hover:text-white transition-colors" />
+            </div>
+            <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-4">Local Freight Delivery</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Secure and professional transport for heavier or bulk shipments — including palletized freight, equipment, and commercial goods.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Safe handling of oversized and bulk items</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Flexible pickup and delivery windows</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Trusted by retailers, distributors, and suppliers</span>
+              </li>
+            </ul>
+            <a href="/services/local-freight-delivery-ottawa" class="inline-flex items-center text-ptc-green font-semibold hover:text-ptc-green-dark transition-colors group-hover:translate-x-1 duration-300">
+              Learn More <ArrowRight class="ml-2 w-4 h-4" />
+            </a>
+          </div>
+
+          <!-- Service Card 3: Dedicated Transportation -->
+          <div class="bg-white rounded-2xl p-8 shadow-ptc hover:shadow-ptc-lg transition-all duration-300 border border-gray-100 group">
+            <div class="w-14 h-14 bg-ptc-green/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-ptc-green transition-colors">
+              <Clock class="w-7 h-7 text-ptc-green group-hover:text-white transition-colors" />
+            </div>
+            <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-4">Dedicated Transportation</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Scheduled routes and contract-based deliveries built specifically for your business. Your own locally managed logistics solution — without the overhead.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Custom routes designed around your operations</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Daily, weekly, or monthly schedules</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Cost-efficient for regular recurring deliveries</span>
+              </li>
+            </ul>
+            <a href="/services/dedicated-transportation-ottawa" class="inline-flex items-center text-ptc-green font-semibold hover:text-ptc-green-dark transition-colors group-hover:translate-x-1 duration-300">
+              Learn More <ArrowRight class="ml-2 w-4 h-4" />
+            </a>
+          </div>
+
+          <!-- Service Card 4: White Glove Logistics -->
+          <div class="bg-white rounded-2xl p-8 shadow-ptc hover:shadow-ptc-lg transition-all duration-300 border border-gray-100 group">
+            <div class="w-14 h-14 bg-ptc-green/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-ptc-green transition-colors">
+              <Shield class="w-7 h-7 text-ptc-green group-hover:text-white transition-colors" />
+            </div>
+            <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-4">White Glove Logistics</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Premium delivery with extra care for sensitive, fragile, or high-value items. Perfect for healthcare providers, boutique retailers, and specialized businesses.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Two-person delivery (optional)</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Extra packaging and handling care</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <CheckCircle class="w-5 h-5 text-ptc-green flex-shrink-0 mt-0.5" />
+                <span>Specialized equipment for sensitive items</span>
+              </li>
+            </ul>
+            <a href="/services/white-glove-logistics-ottawa" class="inline-flex items-center text-ptc-green font-semibold hover:text-ptc-green-dark transition-colors group-hover:translate-x-1 duration-300">
+              Learn More <ArrowRight class="ml-2 w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-barlow font-bold text-gray-900 mb-4">Why Ottawa Businesses Choose Us</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="p-6 bg-gray-50 rounded-xl hover:bg-ptc-beige/30 transition-colors">
+            <div class="flex items-center gap-4 mb-4">
+              <MapPin class="w-8 h-8 text-ptc-green" />
+              <h3 class="text-xl font-bold font-barlow text-gray-900">Locally Owned & Trusted</h3>
+            </div>
+            <p class="text-gray-600">Built in Ottawa, delivering for Ottawa. We know the city and its businesses.</p>
+          </div>
+
+          <div class="p-6 bg-gray-50 rounded-xl hover:bg-ptc-beige/30 transition-colors">
+            <div class="flex items-center gap-4 mb-4">
+              <Clock class="w-8 h-8 text-ptc-green" />
+              <h3 class="text-xl font-bold font-barlow text-gray-900">Fast Turnaround</h3>
+            </div>
+            <p class="text-gray-600">Same-day and scheduled options to keep your business moving at the speed you need.</p>
+          </div>
+
+          <div class="p-6 bg-gray-50 rounded-xl hover:bg-ptc-beige/30 transition-colors">
+            <div class="flex items-center gap-4 mb-4">
+              <Users class="w-8 h-8 text-ptc-green" />
+              <h3 class="text-xl font-bold font-barlow text-gray-900">Customer-First Approach</h3>
+            </div>
+            <p class="text-gray-600">Real people, real support, clear communication. We treat your business like our own.</p>
+          </div>
+
+          <div class="p-6 bg-gray-50 rounded-xl hover:bg-ptc-beige/30 transition-colors">
+            <div class="flex items-center gap-4 mb-4">
+              <Package class="w-8 h-8 text-ptc-green" />
+              <h3 class="text-xl font-bold font-barlow text-gray-900">Flexible Solutions</h3>
+            </div>
+            <p class="text-gray-600">From envelopes to palletized freight, we have the right vehicle and service for the job.</p>
+          </div>
+
+          <div class="p-6 bg-gray-50 rounded-xl hover:bg-ptc-beige/30 transition-colors">
+            <div class="flex items-center gap-4 mb-4">
+              <Shield class="w-8 h-8 text-ptc-green" />
+              <h3 class="text-xl font-bold font-barlow text-gray-900">Reliable Team</h3>
+            </div>
+            <p class="text-gray-600">Professional drivers and staff who take pride in every delivery they make.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+
+  <Footer />
+</Layout>

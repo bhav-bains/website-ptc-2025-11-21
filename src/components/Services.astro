@@ -1,0 +1,71 @@
+---
+import { Package, Truck, Route, Sparkles } from 'lucide-react';
+
+const services = [
+  {
+    icon: Package,
+    title: 'Local Courier Delivery',
+    description: 'Fast, same-day and express delivery across Ottawa. From urgent documents to time-sensitive packages, we deliver with speed and reliability.',
+    image: 'https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    icon: Truck,
+    title: 'Local Freight Delivery',
+    description: 'Professional transportation for larger shipments with flexible same-day scheduling. We handle your cargo with care and precision.',
+    image: 'https://images.pexels.com/photos/1427107/pexels-photo-1427107.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    icon: Route,
+    title: 'Dedicated Transportation',
+    description: 'Customized delivery routes and contract services built around your unique business schedule. Your dedicated logistics partner.',
+    image: 'https://images.pexels.com/photos/4391470/pexels-photo-4391470.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    icon: Sparkles,
+    title: 'White Glove Logistics',
+    description: 'Premium concierge service for sensitive, fragile, or high-value deliveries. Extra care for what matters most.',
+    image: 'https://images.pexels.com/photos/4246106/pexels-photo-4246106.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+];
+---
+
+<section id="services" class="bg-ptc-beige section-padding">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-barlow font-bold text-ptc-green mb-6">
+        Our Services
+      </h2>
+      <p class="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed-extra">
+        From urgent documents to scheduled parcel deliveries, we have a service that fits your needs.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      {services.map((service) => {
+        const Icon = service.icon;
+        return (
+          <div class="bg-white rounded-ptc hover:shadow-ptc-lg transition-all duration-300 group border border-transparent hover:border-ptc-green/20 overflow-hidden">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 w-12 h-12 bg-white rounded-ptc flex items-center justify-center shadow-lg">
+                <Icon size={24} class="text-ptc-green" strokeWidth={2} />
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-barlow font-semibold text-gray-900 mb-3">
+                {service.title}
+              </h3>
+              <p class="text-base text-gray-600 leading-relaxed">{service.description}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,79 @@
+---
+import { Mail, MapPin, Phone } from 'lucide-react';
+---
+
+<footer class="bg-ptc-green text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div>
+        <img
+          src="/Logo - Personal Touch Courier.png"
+          alt="Personal Touch Courier"
+          class="h-20 w-auto mb-4"
+        />
+        <p class="text-gray-100 mb-4 font-barlow font-semibold text-lg">Canadian-First. Customer-Focused.</p>
+        <p class="text-base text-gray-300 leading-relaxed">
+          Ottawa's trusted delivery partner — fast, reliable, and dedicated to getting it done for you.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-barlow font-semibold mb-6 text-white">Quick Links</h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="#home" class="text-gray-300 hover:text-white transition-colors">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="text-gray-300 hover:text-white transition-colors">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#services" class="text-gray-300 hover:text-white transition-colors">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#blog" class="text-gray-300 hover:text-white transition-colors">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="text-gray-300 hover:text-white transition-colors">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-barlow font-semibold mb-6 text-white">Contact Us</h4>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <MapPin size={20} class="mt-1 flex-shrink-0" />
+            <span class="text-gray-300">Ottawa, Ontario</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <Phone size={20} class="mt-1 flex-shrink-0" />
+            <a href="tel:+16137235891" class="text-gray-300 hover:text-white transition-colors">(613) 723-5891</a>
+          </div>
+          <div class="flex items-start gap-3">
+            <Mail size={20} class="mt-1 flex-shrink-0" />
+            <a
+              href="mailto:ops@personaltouchcourier.com"
+              class="text-gray-300 hover:text-white transition-colors"
+            >
+              ops@personaltouchcourier.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-ptc-green-light/30 pt-10 text-center text-sm text-gray-200">
+      <p>&copy; 2025 Personal Touch Courier. All rights reserved. | Ottawa, Ontario, Canada</p>
+    </div>
+  </div>
+</footer>

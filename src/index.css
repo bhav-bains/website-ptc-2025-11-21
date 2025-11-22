@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-barlow text-gray-900 bg-ptc-beige;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-barlow;
+  }
+
+  p {
+    @apply font-inter;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 px-4 sm:py-20 sm:px-6 lg:py-28 lg:px-8;
+  }
+}
