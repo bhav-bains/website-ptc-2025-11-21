@@ -15,9 +15,9 @@ export default {
           900: '#14532D',
         },
         'ptc-teal': {
-          DEFAULT: '#00A896', // Secondary Accent
-          light: '#33B9AB',
-          dark: '#008577',
+          DEFAULT: '#F5F5F0', // Secondary Accent (Beige)
+          light: '#FFFFFF',
+          dark: '#E6E6E0',
         },
         'ptc-beige': {
           DEFAULT: '#F5F5F0', // Background Neutral
