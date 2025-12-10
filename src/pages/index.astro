@@ -1,14 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Section from '../components/ui/Section.astro';
-import Button from '../components/ui/Button.astro';
-import Card from '../components/ui/Card.astro';
-import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight, Handshake } from 'lucide-react';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Section from "../components/ui/Section.astro";
+import Button from "../components/ui/Button.astro";
+import Card from "../components/ui/Card.astro";
+import {
+  Truck,
+  Package,
+  Clock,
+  Shield,
+  MapPin,
+  Users,
+  CheckCircle,
+  ArrowRight,
+  Handshake,
+} from "lucide-react";
 ---
 
-<Layout 
+<Layout
   title="Personal Touch Courier Ottawa | Reliable Local Courier & Freight Delivery"
   description="Ottawa’s trusted courier and logistics partner for businesses. Same-day delivery, dedicated routes, and local freight — fast, reliable, and customer-focused."
 >
@@ -16,33 +26,48 @@ import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight, 
 
   <main>
     <!-- Hero Section -->
-    <Section container={false} class="relative min-h-screen flex items-center justify-center overflow-hidden p-0">
+    <Section
+      container={false}
+      class="relative min-h-screen flex items-center justify-center overflow-hidden p-0"
+    >
       <!-- Background Image with Overlay -->
       <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-black/60 z-10"></div>
         <div class="absolute inset-0 backdrop-blur-sm z-10"></div>
         <!-- Van hero background image -->
-        <img 
-          src="/hero-bg.png" 
-          alt="Personal Touch Courier Delivery Van" 
+        <img
+          src="/hero-bg.png"
+          alt="Personal Touch Courier Delivery Van"
           class="w-full h-full object-cover scale-105 blur-[2px]"
         />
       </div>
 
       <!-- Content -->
-      <div class="relative z-20 text-center max-w-7xl mx-auto px-4 w-full pt-20">
-        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-barlow font-bold text-white mb-8 tracking-tight leading-tight drop-shadow-lg lg:whitespace-nowrap">
-          Local Courier. Personal Touch.
+      <div
+        class="relative z-20 text-center max-w-7xl mx-auto px-4 w-full pt-20"
+      >
+        <h1
+          class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-barlow font-bold text-white mb-8 tracking-tight leading-tight drop-shadow-lg lg:whitespace-nowrap"
+        >
+          Your Courier. Personal Touch.
         </h1>
-        <p class="text-xl sm:text-2xl text-gray-100 mb-12 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
-          Ottawa’s trusted delivery partner — fast, reliable, and dedicated to getting it done for you.
+        <p
+          class="text-xl sm:text-2xl text-gray-100 mb-12 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md"
+        >
+          Ottawa’s trusted delivery partner. <br />
+          Fast, reliable, and dedicated to getting it done for you.
         </p>
-        
+
         <div class="flex flex-col sm:flex-row justify-center gap-5">
           <Button href="#contact" variant="white" size="lg">
             Get an Instant Quote
           </Button>
-          <Button href="https://login.dispatchscience.com" target="_blank" variant="glass" size="lg">
+          <Button
+            href="https://personaltouchcourier.dsapp.io/Account/Login"
+            target="_blank"
+            variant="glass"
+            size="lg"
+          >
             Track Your Parcel
           </Button>
         </div>
@@ -52,49 +77,79 @@ import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight, 
     <!-- Trusted By Section -->
     <Section background="white" class="py-20">
       <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-barlow font-bold text-gray-900 mb-4">Trusted by All Types of Businesses</h2>
+        <h2
+          class="text-3xl sm:text-4xl font-barlow font-bold text-gray-900 mb-4"
+        >
+          Trusted by All Types of Businesses
+        </h2>
         <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-          We partner with a diverse range of industries across Ottawa, providing tailored courier solutions to meet their unique needs.
+          We partner with a diverse range of industries across Ottawa, providing
+          tailored courier solutions to meet their unique needs.
         </p>
       </div>
 
       <div class="flex flex-wrap justify-center gap-12 md:gap-20">
         <!-- Healthcare -->
         <div class="flex flex-col items-center gap-4 group">
-          <div class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300">
-            <span class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300">+</span>
+          <div
+            class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300"
+          >
+            <span
+              class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300"
+              >+</span
+            >
           </div>
           <span class="font-bold text-gray-900 text-lg">Healthcare</span>
         </div>
 
         <!-- Legal -->
         <div class="flex flex-col items-center gap-4 group">
-          <div class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300">
-            <span class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300">⚖️</span>
+          <div
+            class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300"
+          >
+            <span
+              class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300"
+              >⚖️</span
+            >
           </div>
           <span class="font-bold text-gray-900 text-lg">Legal</span>
         </div>
 
         <!-- Retail -->
         <div class="flex flex-col items-center gap-4 group">
-          <div class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300">
-            <span class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300">🏪</span>
+          <div
+            class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300"
+          >
+            <span
+              class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300"
+              >🏪</span
+            >
           </div>
           <span class="font-bold text-gray-900 text-lg">Retail</span>
         </div>
 
         <!-- Industrial -->
         <div class="flex flex-col items-center gap-4 group">
-          <div class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300">
-            <span class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300">🏭</span>
+          <div
+            class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300"
+          >
+            <span
+              class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300"
+              >🏭</span
+            >
           </div>
           <span class="font-bold text-gray-900 text-lg">Industrial</span>
         </div>
 
         <!-- Corporate -->
         <div class="flex flex-col items-center gap-4 group">
-          <div class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300">
-            <span class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300">🏢</span>
+          <div
+            class="w-20 h-20 bg-ptc-green/10 rounded-full flex items-center justify-center group-hover:bg-ptc-green transition-colors duration-300"
+          >
+            <span
+              class="text-3xl text-ptc-green group-hover:text-white transition-colors duration-300"
+              >🏢</span
+            >
           </div>
           <span class="font-bold text-gray-900 text-lg">Corporate</span>
         </div>
@@ -104,43 +159,85 @@ import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight, 
     <!-- Why Choose Us Section -->
     <Section background="gray">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-barlow font-bold text-ptc-blue mb-4">Why Businesses Choose the Personal Touch</h2>
+        <h2 class="text-4xl font-barlow font-bold text-ptc-blue mb-4">
+          Why Businesses Choose the Personal Touch
+        </h2>
       </div>
-      
+
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card class="text-center h-full">
-          <div class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">⚡</div>
-          <h3 class="text-xl font-bold font-barlow text-ptc-blue mb-3">Fast & Reliable</h3>
-          <p class="text-gray-600">Same-day and scheduled deliveries you can count on — every time.</p>
+          <div
+            class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl"
+          >
+            ⚡
+          </div>
+          <h3 class="text-xl font-bold font-barlow text-ptc-blue mb-3">
+            Fast & Reliable
+          </h3>
+          <p class="text-gray-600">
+            Same-day and scheduled deliveries you can count on - every time.
+          </p>
         </Card>
 
         <Card class="text-center h-full">
-          <div class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">💚</div>
-          <h3 class="text-xl font-bold font-barlow text-ptc-blue mb-3">Customer-First Service</h3>
-          <p class="text-gray-600">Real people, real support — your delivery always gets our full attention.</p>
+          <div
+            class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl"
+          >
+            💚
+          </div>
+          <h3 class="text-xl font-bold font-barlow text-ptc-blue mb-3">
+            Customer-First Service
+          </h3>
+          <p class="text-gray-600">
+            One-stop accountability. Real people, real support. You get our full
+            attention.
+          </p>
         </Card>
 
         <Card class="text-center h-full">
-          <div class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🏙️</div>
-          <h3 class="text-xl font-bold font-barlow text-ptc-blue mb-3">Local & Canadian-Owned</h3>
-          <p class="text-gray-600">Proudly built in Ottawa, supporting businesses in our own community.</p>
+          <div
+            class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl"
+          >
+            🏙️
+          </div>
+          <h3 class="text-xl font-bold font-barlow text-ptc-blue mb-3">
+            Local & Canadian-Owned
+          </h3>
+          <p class="text-gray-600">
+            Proudly built in Ottawa, supporting businesses in our own community.
+          </p>
         </Card>
 
         <Card class="text-center h-full">
-          <div class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🤝</div>
-          <h3 class="text-xl font-bold font-barlow text-ptc-blue mb-3">Ease of Access</h3>
-          <p class="text-gray-600">Simple online platform for booking, tracking, and managing your deliveries.</p>
+          <div
+            class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl"
+          >
+            🤝
+          </div>
+          <h3 class="text-xl font-bold font-barlow text-ptc-blue mb-3">
+            Ease of Access
+          </h3>
+          <p class="text-gray-600">
+            Simple online platform for booking, tracking, and managing your
+            deliveries.
+          </p>
         </Card>
       </div>
     </Section>
 
     <!-- Services Section -->
     <Section background="white" class="py-24">
-      <div class="flex flex-col lg:flex-row justify-between items-end gap-10 mb-16">
+      <div
+        class="flex flex-col lg:flex-row justify-between items-end gap-10 mb-16"
+      >
         <div class="max-w-3xl">
-          <h2 class="text-4xl font-barlow font-bold text-gray-900 mb-6">Courier Solutions for Every Business</h2>
+          <h2 class="text-4xl font-barlow font-bold text-gray-900 mb-6">
+            Courier Solutions for Every Business
+          </h2>
           <p class="text-xl text-gray-600 leading-relaxed">
-            Whether you need same-day delivery for urgent parcels or dedicated routes for your growing business, we make logistics simple, fast, and personal.
+            Whether you need same-day delivery for urgent parcels or dedicated
+            routes for your growing business, we make logistics simple, fast,
+            and personal.
           </p>
         </div>
         <div class="shrink-0">
@@ -152,42 +249,88 @@ import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight, 
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Local Courier -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+        >
           <Package class="w-10 h-10 text-gray-900 mb-6" stroke-width={1.5} />
-          <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-3">Local Courier Delivery</h3>
-          <p class="text-gray-600 mb-8 leading-relaxed">Same-day and express delivery across Ottawa.</p>
-          <a href="/services/local-courier-delivery-ottawa" class="inline-flex items-center font-bold text-ptc-green hover:text-ptc-green-dark transition-colors">
-            Learn More <ArrowRight class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-3">
+            Local Courier Delivery
+          </h3>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Same-day and express delivery across Ottawa.
+          </p>
+          <a
+            href="/services/local-courier-delivery-ottawa"
+            class="inline-flex items-center font-bold text-ptc-green hover:text-ptc-green-dark transition-colors"
+          >
+            Learn More <ArrowRight
+              class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+            />
           </a>
         </div>
 
         <!-- Local Freight -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+        >
           <Truck class="w-10 h-10 text-gray-900 mb-6" stroke-width={1.5} />
-          <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-3">Local Freight Delivery</h3>
-          <p class="text-gray-600 mb-8 leading-relaxed">Reliable transportation for larger shipments with same-day scheduling.</p>
-          <a href="/services/local-freight-delivery-ottawa" class="inline-flex items-center font-bold text-ptc-green hover:text-ptc-green-dark transition-colors">
-            Learn More <ArrowRight class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-3">
+            Local Freight Delivery
+          </h3>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Reliable transportation for larger shipments with same-day
+            scheduling.
+          </p>
+          <a
+            href="/services/local-freight-delivery-ottawa"
+            class="inline-flex items-center font-bold text-ptc-green hover:text-ptc-green-dark transition-colors"
+          >
+            Learn More <ArrowRight
+              class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+            />
           </a>
         </div>
 
         <!-- Dedicated Transportation -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+        >
           <Clock class="w-10 h-10 text-gray-900 mb-6" stroke-width={1.5} />
-          <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-3">Dedicated Transportation</h3>
-          <p class="text-gray-600 mb-8 leading-relaxed">Customized routes and contract deliveries built around your schedule.</p>
-          <a href="/services/dedicated-transportation-ottawa" class="inline-flex items-center font-bold text-ptc-green hover:text-ptc-green-dark transition-colors">
-            Learn More <ArrowRight class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-3">
+            Dedicated Transportation
+          </h3>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Customized routes and contract deliveries built around your
+            schedule.
+          </p>
+          <a
+            href="/services/dedicated-transportation-ottawa"
+            class="inline-flex items-center font-bold text-ptc-green hover:text-ptc-green-dark transition-colors"
+          >
+            Learn More <ArrowRight
+              class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+            />
           </a>
         </div>
 
         <!-- White Glove -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+        >
           <Shield class="w-10 h-10 text-gray-900 mb-6" stroke-width={1.5} />
-          <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-3">White Glove Logistics</h3>
-          <p class="text-gray-600 mb-8 leading-relaxed">Premium care for sensitive, fragile, or high-value deliveries.</p>
-          <a href="/services/white-glove-logistics-ottawa" class="inline-flex items-center font-bold text-ptc-green hover:text-ptc-green-dark transition-colors">
-            Learn More <ArrowRight class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-3">
+            White Glove Logistics
+          </h3>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Premium care for sensitive, fragile, or high-value deliveries.
+          </p>
+          <a
+            href="/services/white-glove-logistics-ottawa"
+            class="inline-flex items-center font-bold text-ptc-green hover:text-ptc-green-dark transition-colors"
+          >
+            Learn More <ArrowRight
+              class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+            />
           </a>
         </div>
       </div>
@@ -197,10 +340,13 @@ import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight, 
     <Section container={false} class="relative py-24 overflow-hidden">
       <!-- Background Image with Overlay -->
       <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-gray-900/80 to-gray-800/85 z-10"></div>
-        <img 
-          src="/promise-delivery.jpg" 
-          alt="Personal Delivery Service" 
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-gray-900/80 to-gray-800/85 z-10"
+        >
+        </div>
+        <img
+          src="/promise-delivery.jpg"
+          alt="Personal Delivery Service"
           class="w-full h-full object-cover"
         />
       </div>
@@ -208,15 +354,22 @@ import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight, 
       <!-- Content -->
       <div class="relative z-20 max-w-3xl mx-auto text-center px-4">
         <div class="flex justify-center mb-8">
-          <div class="w-20 h-20 bg-ptc-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-ptc-teal/30">
+          <div
+            class="w-20 h-20 bg-ptc-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-ptc-teal/30"
+          >
             <Handshake class="w-10 h-10 text-ptc-teal" />
           </div>
         </div>
-        <h2 class="text-4xl sm:text-5xl font-barlow font-bold text-white mb-8">We'll Get It Done for You.</h2>
+        <h2 class="text-4xl sm:text-5xl font-barlow font-bold text-white mb-8">
+          We'll Get It Done for You.
+        </h2>
         <p class="text-xl sm:text-2xl text-gray-200 leading-relaxed">
-          Every package we deliver carries our promise — to treat your shipment with care, communicate clearly, and deliver on time, every time.
-          <br/><br/>
-          <span class="text-ptc-teal font-bold">Because that's what a Personal Touch really means.</span>
+          Every package we deliver carries our promise — to treat your shipment
+          with care, communicate clearly, and deliver on time, every time.
+          <br /><br />
+          <span class="text-ptc-teal font-bold"
+            >Because that's what a Personal Touch really means.</span
+          >
         </p>
       </div>
     </Section>
@@ -225,48 +378,47 @@ import { Truck, Package, Clock, Shield, MapPin, Users, CheckCircle, ArrowRight, 
     <Section background="gray">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1">
-          <img 
-            src="/ottawa-expertise.jpg" 
-            alt="Ottawa Cityscape" 
+          <img
+            src="/ottawa-expertise.jpg"
+            alt="Ottawa Cityscape"
             class="rounded-ptc-lg shadow-ptc-xl"
           />
         </div>
         <div class="order-1 lg:order-2">
-          <h2 class="text-4xl font-barlow font-bold text-ptc-blue mb-6">Ottawa’s Courier Experts — Born and Built Here.</h2>
+          <h2 class="text-4xl font-barlow font-bold text-ptc-blue mb-6">
+            Ottawa’s Courier Experts — Born and Built Here.
+          </h2>
           <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-            We’re not just another delivery company. We’re your neighbours, your partners, and your logistics team — built right here in Ottawa.
+            We’re not just another delivery company. We’re your neighbours, your
+            partners, and your logistics team — built right here in Ottawa.
           </p>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Our drivers know the streets, our clients know our names, and our service speaks for itself.
+            Our drivers know the streets, our clients know our names, and our
+            service speaks for itself.
           </p>
           <div class="flex items-center gap-4">
             <div class="flex -space-x-4">
-              <img class="w-12 h-12 rounded-full border-2 border-white" src="https://i.pravatar.cc/150?u=1" alt="Team Member" />
-              <img class="w-12 h-12 rounded-full border-2 border-white" src="https://i.pravatar.cc/150?u=2" alt="Team Member" />
-              <img class="w-12 h-12 rounded-full border-2 border-white" src="https://i.pravatar.cc/150?u=3" alt="Team Member" />
+              <img
+                class="w-12 h-12 rounded-full border-2 border-white"
+                src="https://i.pravatar.cc/150?u=1"
+                alt="Team Member"
+              />
+              <img
+                class="w-12 h-12 rounded-full border-2 border-white"
+                src="https://i.pravatar.cc/150?u=2"
+                alt="Team Member"
+              />
+              <img
+                class="w-12 h-12 rounded-full border-2 border-white"
+                src="https://i.pravatar.cc/150?u=3"
+                alt="Team Member"
+              />
             </div>
-            <span class="font-bold text-ptc-green">Proudly Canadian. Proudly Local.</span>
+            <span class="font-bold text-ptc-green"
+              >Proudly Canadian. Proudly Local.</span
+            >
           </div>
         </div>
-      </div>
-    </Section>
-
-    <!-- Final CTA Section -->
-    <Section background="green" class="text-center">
-      <h2 class="text-4xl font-barlow font-bold mb-6">Ready to Move with a Personal Touch?</h2>
-      <p class="text-xl text-ptc-green-100 mb-10 max-w-2xl mx-auto">
-        Same-day courier, local freight, and dedicated routes — made simple, fast, and reliable.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <Button href="#contact" variant="white" size="lg" class="text-ptc-green hover:bg-gray-100">
-          Request a Quote
-        </Button>
-        <Button href="tel:613-723-5891" variant="outline" size="lg" class="border-white text-white hover:bg-white/10 hover:text-white hover:border-white">
-          Call Us
-        </Button>
-        <Button href="https://login.dispatchscience.com" variant="ghost" size="lg" class="text-ptc-green-100 hover:bg-ptc-green-dark hover:text-white">
-          Login to DispatchScience
-        </Button>
       </div>
     </Section>
   </main>

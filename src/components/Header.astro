@@ -1,22 +1,28 @@
 ---
-import { X, Phone, Mail } from 'lucide-react';
-import Button from './ui/Button.astro';
+import { X, Phone, Mail } from "lucide-react";
+import Button from "./ui/Button.astro";
 ---
 
-<div id="header-wrapper" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out">
+<div
+  id="header-wrapper"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out"
+>
   <!-- Top Contact Bar -->
-  <div id="top-bar" class="bg-ptc-green text-white py-2 hidden md:block transition-all duration-500">
+  <div
+    id="top-bar"
+    class="bg-ptc-green text-white py-2 hidden md:block transition-all duration-500"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-end items-center gap-6 text-sm">
-        <a 
-          href="tel:613-723-5891" 
+        <a
+          href="tel:613-723-5891"
           class="flex items-center gap-2 hover:text-ptc-teal-light transition-colors"
         >
           <Phone class="w-4 h-4" />
           <span>(613) 723-5891</span>
         </a>
-        <a 
-          href="mailto:ops@personaltouchcourier.com" 
+        <a
+          href="mailto:ops@personaltouchcourier.com"
           class="flex items-center gap-2 hover:text-ptc-teal-light transition-colors"
         >
           <Mail class="w-4 h-4" />
@@ -26,9 +32,15 @@ import Button from './ui/Button.astro';
     </div>
   </div>
 
-  <header id="main-header" class="backdrop-blur-md bg-ptc-green/30 transition-all duration-500 ease-in-out">
+  <header
+    id="main-header"
+    class="backdrop-blur-md bg-ptc-green/30 transition-all duration-500 ease-in-out"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative flex justify-center items-center h-24 transition-all duration-500 ease-in-out" id="header-content">
+      <div
+        class="relative flex justify-center items-center h-24 transition-all duration-500 ease-in-out"
+        id="header-content"
+      >
         <!-- Logo -->
         <div class="absolute left-0">
           <a href="/" class="flex items-center gap-2 group">
@@ -38,22 +50,42 @@ import Button from './ui/Button.astro';
               id="logo-img"
               class="h-12 w-auto transition-all duration-500"
             />
-            <span id="logo-text" class="text-white font-barlow font-bold text-lg sm:text-xl tracking-tight transition-all duration-500">Personal Touch Courier</span>
+            <span
+              id="logo-text"
+              class="text-white font-barlow font-bold text-lg sm:text-xl tracking-tight transition-all duration-500"
+              >Personal Touch Courier</span
+            >
           </a>
         </div>
 
         <!-- Desktop Navigation - Center Aligned -->
         <nav class="hidden md:flex items-center justify-center space-x-10">
-          <a href="/services" class="text-base font-semibold text-white hover:text-ptc-beige transition-colors drop-shadow-lg">Services</a>
-          <a href="/pricing" class="text-base font-semibold text-white hover:text-ptc-beige transition-colors drop-shadow-lg">Pricing</a>
-          <a href="/about" class="text-base font-semibold text-white hover:text-ptc-beige transition-colors drop-shadow-lg">About Us</a>
-          <a href="/contact" class="text-base font-semibold text-white hover:text-ptc-beige transition-colors drop-shadow-lg">Contact</a>
+          <a
+            href="/services"
+            class="text-base font-semibold text-white hover:text-ptc-beige transition-colors drop-shadow-lg"
+            >Services</a
+          >
+          <a
+            href="/pricing"
+            class="text-base font-semibold text-white hover:text-ptc-beige transition-colors drop-shadow-lg"
+            >Pricing</a
+          >
+          <a
+            href="/about"
+            class="text-base font-semibold text-white hover:text-ptc-beige transition-colors drop-shadow-lg"
+            >About Us</a
+          >
+          <a
+            href="/contact"
+            class="text-base font-semibold text-white hover:text-ptc-beige transition-colors drop-shadow-lg"
+            >Contact</a
+          >
         </nav>
 
         <!-- Desktop Actions -->
         <div class="hidden md:flex items-center space-x-3 absolute right-0">
-          <Button 
-            href="https://login.dispatchscience.com" 
+          <Button
+            href="https://personaltouchcourier.dsapp.io/Account/Login"
             target="_blank"
             variant="glass"
             size="sm"
@@ -61,8 +93,8 @@ import Button from './ui/Button.astro';
           >
             Login
           </Button>
-          <Button 
-            href="#signup" 
+          <Button
+            href="#signup"
             variant="primary"
             size="sm"
             class="font-bold text-gray-900"
@@ -78,10 +110,17 @@ import Button from './ui/Button.astro';
           aria-label="Toggle menu"
         >
           <span id="menu-open" class="block w-6 h-6">
-            <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <line x1="3" y1="6" x2="21" y2="6"/>
-              <line x1="9" y1="12" x2="21" y2="12"/>
-              <line x1="3" y1="18" x2="21" y2="18"/>
+            <svg
+              class="w-full h-full"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="9" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
           </span>
           <span id="menu-close" class="hidden">
@@ -148,51 +187,51 @@ import Button from './ui/Button.astro';
 <script>
   // Scroll detection for sticky header animation
   let lastScroll = 0;
-  const headerWrapper = document.getElementById('header-wrapper');
-  const mainHeader = document.getElementById('main-header');
-  const headerContent = document.getElementById('header-content');
-  const topBar = document.getElementById('top-bar');
-  const logoImg = document.getElementById('logo-img');
-  const logoText = document.getElementById('logo-text');
+  const headerWrapper = document.getElementById("header-wrapper");
+  const mainHeader = document.getElementById("main-header");
+  const headerContent = document.getElementById("header-content");
+  const topBar = document.getElementById("top-bar");
+  const logoImg = document.getElementById("logo-img");
+  const logoText = document.getElementById("logo-text");
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
 
     if (currentScroll > 50) {
       // Scrolled - make header compact and more opaque
-      mainHeader?.classList.add('bg-ptc-green/95', 'shadow-lg');
-      mainHeader?.classList.remove('bg-ptc-green/30');
-      headerContent?.classList.remove('h-24');
-      headerContent?.classList.add('h-16');
-      logoImg?.classList.remove('h-12');
-      logoImg?.classList.add('h-9');
-      logoText?.classList.remove('text-xl');
-      logoText?.classList.add('text-lg');
-      
+      mainHeader?.classList.add("bg-ptc-green/95", "shadow-lg");
+      mainHeader?.classList.remove("bg-ptc-green/30");
+      headerContent?.classList.remove("h-24");
+      headerContent?.classList.add("h-16");
+      logoImg?.classList.remove("h-12");
+      logoImg?.classList.add("h-9");
+      logoText?.classList.remove("text-xl");
+      logoText?.classList.add("text-lg");
+
       // Hide top bar on scroll
       if (topBar) {
-        topBar.style.maxHeight = '0';
-        topBar.style.opacity = '0';
-        topBar.style.paddingTop = '0';
-        topBar.style.paddingBottom = '0';
+        topBar.style.maxHeight = "0";
+        topBar.style.opacity = "0";
+        topBar.style.paddingTop = "0";
+        topBar.style.paddingBottom = "0";
       }
     } else {
       // At top - make header larger and more transparent
-      mainHeader?.classList.remove('bg-ptc-green/95', 'shadow-lg');
-      mainHeader?.classList.add('bg-ptc-green/30');
-      headerContent?.classList.add('h-24');
-      headerContent?.classList.remove('h-16');
-      logoImg?.classList.add('h-12');
-      logoImg?.classList.remove('h-9');
-      logoText?.classList.add('text-xl');
-      logoText?.classList.remove('text-lg');
-      
+      mainHeader?.classList.remove("bg-ptc-green/95", "shadow-lg");
+      mainHeader?.classList.add("bg-ptc-green/30");
+      headerContent?.classList.add("h-24");
+      headerContent?.classList.remove("h-16");
+      logoImg?.classList.add("h-12");
+      logoImg?.classList.remove("h-9");
+      logoText?.classList.add("text-xl");
+      logoText?.classList.remove("text-lg");
+
       // Show top bar at top
       if (topBar) {
-        topBar.style.maxHeight = '100px';
-        topBar.style.opacity = '1';
-        topBar.style.paddingTop = '0.5rem';
-        topBar.style.paddingBottom = '0.5rem';
+        topBar.style.maxHeight = "100px";
+        topBar.style.opacity = "1";
+        topBar.style.paddingTop = "0.5rem";
+        topBar.style.paddingBottom = "0.5rem";
       }
     }
 
@@ -200,35 +239,34 @@ import Button from './ui/Button.astro';
   });
 
   // Mobile menu functionality
-  const button = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  const menuOpen = document.getElementById('menu-open');
-  const menuClose = document.getElementById('menu-close');
-  const menuLinks = document.querySelectorAll('.mobile-menu-link');
+  const button = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+  const menuOpen = document.getElementById("menu-open");
+  const menuClose = document.getElementById("menu-close");
+  const menuLinks = document.querySelectorAll(".mobile-menu-link");
 
   if (button && menu && menuOpen && menuClose) {
-    button.addEventListener('click', () => {
-      const isHidden = menu.classList.contains('hidden');
+    button.addEventListener("click", () => {
+      const isHidden = menu.classList.contains("hidden");
       if (isHidden) {
         // Opening menu
-        menu.classList.remove('hidden');
-        menuOpen.classList.add('hidden');
-        menuClose.classList.remove('hidden');
+        menu.classList.remove("hidden");
+        menuOpen.classList.add("hidden");
+        menuClose.classList.remove("hidden");
       } else {
         // Closing menu
-        menu.classList.add('hidden');
-        menuOpen.classList.remove('hidden');
-        menuClose.classList.add('hidden');
+        menu.classList.add("hidden");
+        menuOpen.classList.remove("hidden");
+        menuClose.classList.add("hidden");
       }
     });
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        menuOpen.classList.remove('hidden');
-        menuClose.classList.add('hidden');
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        menuOpen.classList.remove("hidden");
+        menuClose.classList.add("hidden");
       });
     });
   }
 </script>
-
