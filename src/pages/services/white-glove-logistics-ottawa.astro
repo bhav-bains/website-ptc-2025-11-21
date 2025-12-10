@@ -1,0 +1,142 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import {
+    Gem,
+    Hammer,
+    Server,
+    Users,
+    Box,
+    Shield,
+    ClipboardCheck,
+    UserCheck,
+    PackageCheck,
+    Lock,
+} from "lucide-react";
+
+const heroTitle =
+    "Premium Care. Zero Risk. White Glove Logistics for Your Specialty Goods.";
+const heroSubtitle =
+    "The ultimate level of service for fragile equipment, sensitive documentation, luxury goods, or high-value IT assets. We deliver beyond the door, with installation and unpacking.";
+const heroImage =
+    "https://images.pexels.com/photos/6169123/pexels-photo-6169123.jpeg?auto=compress&cs=tinysrgb&w=1600"; // Professional movers
+const heroIconText = "White Glove Logistics";
+
+const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+    {
+        name: "White Glove Logistics Ottawa",
+        url: "/services/white-glove-logistics-ottawa",
+    },
+];
+
+const serviceOptionsTitle = "Specialized Handling for Unique Requirements";
+const serviceOptionsDescription =
+    "Maximum security and precision for investments that require more than just delivery.";
+
+const serviceOptions = [
+    {
+        icon: Gem,
+        title: "High-Value & Fragile Goods Transport",
+        description:
+            "Maximum Security. Dedicated transport and specialized handling protocols for items requiring extra protection, such as artwork, antique furniture, or boutique retail goods.",
+        bgColor: "bg-purple-500/10",
+        iconColor: "text-purple-500",
+        badge: "HIGH-VALUE",
+        badgeColor: "bg-purple-500",
+        image: "https://images.pexels.com/photos/4006093/pexels-photo-4006093.jpeg?auto=compress&cs=tinysrgb&w=800", // Fragile item handling
+    },
+    {
+        icon: Hammer,
+        title: "In-Home/Office Setup & Placement",
+        description:
+            "Beyond Curbside. Our team can unpack, inspect, and place items in their final location, including light assembly or removal of packaging debris.",
+        bgColor: "bg-orange-500/10",
+        iconColor: "text-orange-500",
+        badge: "FULL SERVICE",
+        badgeColor: "bg-orange-500",
+        image: "https://images.pexels.com/photos/4246109/pexels-photo-4246109.jpeg?auto=compress&cs=tinysrgb&w=800", // Assembly/Unpacking
+    },
+    {
+        icon: Server,
+        title: "Sensitive Data & IT Logistics",
+        description:
+            "Secure Chain of Custody. Specialized transport for servers, data infrastructure, and sensitive technical equipment requiring verifiable security and environmental control.",
+        bgColor: "bg-blue-500/10",
+        iconColor: "text-blue-500",
+        badge: "SECURE",
+        badgeColor: "bg-blue-500",
+        image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=800", // Server/IT
+    },
+];
+
+const featuresTitle = "The Difference is in the Details";
+const featuresDescription =
+    "We go above and beyond to ensure the safety and perfect condition of your assets.";
+
+const features = [
+    {
+        icon: Users,
+        title: "Dedicated Two-Person Crew",
+        description:
+            "When required, we deploy a two-person team to ensure safe lifting, maneuvering, and secure placement of heavy or oversized fragile items.",
+    },
+    {
+        icon: Box,
+        title: "Specialized Packaging & Wrapping",
+        description:
+            "Utilization of custom crates, blankets, strapping, and anti-static wrapping techniques to protect items from shock, vibration, and environmental changes during transport.",
+    },
+    {
+        icon: Shield,
+        title: "Insurance & Liability",
+        description:
+            "Full liability coverage and transparent insurance policies provide peace of mind for your most valuable assets.",
+    },
+    {
+        icon: ClipboardCheck,
+        title: "Pre-Delivery Inspection",
+        description:
+            "Thorough inspection and documentation before and after transit ensure the condition of the goods is verified at every stage of the journey.",
+    },
+    {
+        icon: UserCheck,
+        title: "Discreet & Uniformed Service",
+        description:
+            "Our teams arrive in professional uniforms and conduct themselves with complete discretion, acting as a seamless, high-end extension of your own brand.",
+    },
+];
+
+const introImage =
+    "https://images.pexels.com/photos/6169006/pexels-photo-6169006.jpeg?auto=compress&cs=tinysrgb&w=800"; // Professional handing gloves/box
+const introTitle = "Handling Perfection for Your Most Valuable Assets.";
+const introText =
+    "When the stakes are high, standard delivery is not an option. White Glove Logistics provides the pinnacle of personalized delivery service, ensuring sensitive, fragile, or high-value items are moved flawlessly. This service includes specialized preparation, secure transport, and final placement, removing all liability and complexity from your business. Trust the Personal Touch to deliver perfection.";
+
+const introSubPoints = [
+    { icon: Shield, text: "Full Risk Mitigation" },
+    { icon: PackageCheck, text: "Custom Placement" },
+    { icon: Lock, text: "Verifiable Security Protocol" },
+];
+---
+
+<ServiceLayout
+    title="White Glove Logistics Ottawa | Personal Touch Courier"
+    description="Our White Glove Logistics service in Ottawa provides premium, specialized handling for sensitive, fragile, or high-value items, including specialized packaging and setup."
+    heroImage={heroImage}
+    heroTitle={heroTitle}
+    heroSubtitle={heroSubtitle}
+    heroIcon={Gem}
+    heroIconText={heroIconText}
+    breadcrumbs={breadcrumbs}
+    serviceOptionsTitle={serviceOptionsTitle}
+    serviceOptionsDescription={serviceOptionsDescription}
+    serviceOptions={serviceOptions}
+    featuresTitle={featuresTitle}
+    featuresDescription={featuresDescription}
+    features={features}
+    introImage={introImage}
+    introTitle={introTitle}
+    introText={introText}
+    introSubPoints={introSubPoints}
+/>

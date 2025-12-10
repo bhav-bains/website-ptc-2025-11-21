@@ -1,9 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import Section from "../../components/ui/Section.astro";
-import Button from "../../components/ui/Button.astro";
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
 import {
     Package,
     Zap,
@@ -14,11 +10,15 @@ import {
     Shield,
     Monitor,
     Users,
-    Phone,
-    CheckCircle,
 } from "lucide-react";
 
-// Breadcrumb data for SEO
+const heroTitle = "Ottawa's Fastest Same-Day Courier Delivery Service.";
+const heroSubtitle =
+    "Get urgent documents, small parcels, and critical items delivered across the National Capital Region quickly, reliably, and with the Personal Touch.";
+const heroImage =
+    "https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=1600";
+const heroIconText = "Local Courier Service";
+
 const breadcrumbs = [
     { name: "Home", url: "/" },
     { name: "Services", url: "/services" },
@@ -28,17 +28,9 @@ const breadcrumbs = [
     },
 ];
 
-// JSON-LD Breadcrumb structured data
-const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: breadcrumbs.map((crumb, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: crumb.name,
-        item: `https://personaltouchcourier.com${crumb.url}`,
-    })),
-};
+const serviceOptionsTitle = "Our Local Delivery Service Options";
+const serviceOptionsDescription =
+    "We offer flexible service levels to match your urgency and budget.";
 
 const serviceOptions = [
     {
@@ -76,6 +68,11 @@ const serviceOptions = [
     },
 ];
 
+const featuresTitle =
+    "Why Choose Personal Touch Courier for Local Courier Delivery";
+const featuresDescription =
+    "Our service is built on a promise of reliability, professionalism, and personal attention.";
+
 const features = [
     {
         icon: MapPin,
@@ -108,353 +105,37 @@ const features = [
             "Every Personal Touch Courier professional is neat, courteous, and dependable, taking pride in representing your business with professionalism.",
     },
 ];
+
+const introImage =
+    "https://images.pexels.com/photos/6169033/pexels-photo-6169033.jpeg?auto=compress&cs=tinysrgb&w=800";
+const introTitle = "When Time is Critical, Trust is Non-Negotiable";
+const introText =
+    "At Personal Touch Courier, we understand that for professional services, an urgent delivery isn't just about speed—it's about absolute security and compliance. Our Local Courier Delivery is the specialized solution for Ottawa businesses, ensuring your most sensitive documents and time-critical parcels are handled with the discretion and professionalism your firm demands.";
+
+const introSubPoints = [
+    { icon: Shield, text: "Mission-Critical Compliance" },
+    { icon: Zap, text: "Dedicated Urgency" },
+    { icon: Users, text: "Local Team, Single Chain of Custody" },
+];
 ---
 
-<Layout
+<ServiceLayout
     title="Same-Day Courier Delivery Ottawa | Personal Touch Courier"
     description="Need an urgent delivery in Ottawa? Our Local Courier Delivery service offers guaranteed same-day and rush options for parcels and documents. Fast, reliable, and always handled with care."
->
-    <Header />
-
-    <main>
-        <!-- Hero Section -->
-        <Section
-            container={false}
-            class="relative min-h-[70vh] flex items-center justify-center overflow-hidden p-0"
-        >
-            <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-black/60 z-10"></div>
-                <div class="absolute inset-0 backdrop-blur-sm z-10"></div>
-                <img
-                    src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                    alt="Same-day courier delivery service in Ottawa - Personal Touch Courier driver with package"
-                    class="w-full h-full object-cover scale-105 blur-[2px]"
-                />
-            </div>
-
-            <div
-                class="relative z-20 text-center max-w-5xl mx-auto px-4 pt-24 pb-12"
-            >
-                <nav aria-label="Breadcrumb" class="flex justify-center mb-8">
-                    <ol
-                        class="flex items-center gap-2 text-xs text-gray-400"
-                        itemscope
-                        itemtype="https://schema.org/BreadcrumbList"
-                    >
-                        {
-                            breadcrumbs.map((crumb, index) => (
-                                <li
-                                    class="flex items-center gap-2"
-                                    itemprop="itemListElement"
-                                    itemscope
-                                    itemtype="https://schema.org/ListItem"
-                                >
-                                    {index > 0 && (
-                                        <span class="text-gray-500 text-[10px]">
-                                            &gt;
-                                        </span>
-                                    )}
-                                    <a
-                                        href={crumb.url}
-                                        class={`hover:text-white transition-colors ${index === breadcrumbs.length - 1 ? "text-white cursor-default pointer-events-none" : ""}`}
-                                        itemprop="item"
-                                    >
-                                        <span itemprop="name">
-                                            {crumb.name}
-                                        </span>
-                                    </a>
-                                    <meta
-                                        itemprop="position"
-                                        content={(index + 1).toString()}
-                                    />
-                                </li>
-                            ))
-                        }
-                    </ol>
-                </nav>
-                <div
-                    class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6"
-                >
-                    <Package class="w-5 h-5 text-white" />
-                    <span class="text-white font-medium"
-                        >Local Courier Service</span
-                    >
-                </div>
-
-                <h1
-                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-barlow font-bold text-white mb-6 leading-tight"
-                >
-                    Ottawa's Fastest Same-Day Courier Delivery Service.
-                </h1>
-                <p
-                    class="text-xl sm:text-2xl text-gray-100 mb-10 max-w-3xl mx-auto leading-relaxed"
-                >
-                    Get urgent documents, small parcels, and critical items
-                    delivered across the National Capital Region quickly,
-                    reliably, and with the Personal Touch.
-                </p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <Button href="#contact" variant="white" size="lg">
-                        Request a Quote Now
-                    </Button>
-                    <Button href="tel:613-723-5891" variant="glass" size="lg">
-                        <Phone class="w-5 h-5 mr-2" /> Call Our Dispatch Team
-                    </Button>
-                </div>
-            </div>
-        </Section>
-
-        <!-- Trusted Industries Section -->
-        <Section background="white" class="py-16">
-            <div class="text-center mb-12">
-                <h2
-                    class="text-2xl sm:text-3xl font-barlow font-bold text-ptc-blue"
-                >
-                    Our same-day courier service is trusted by businesses across
-                    Ottawa.
-                </h2>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-8 md:gap-12">
-                <div class="flex flex-col items-center gap-3 group">
-                    <div
-                        class="w-20 h-20 bg-ptc-beige rounded-full flex items-center justify-center shadow-sm group-hover:shadow-lg group-hover:bg-ptc-green transition-all duration-300"
-                    >
-                        <span
-                            class="text-3xl group-hover:scale-110 transition-transform duration-300"
-                            >⚖️</span
-                        >
-                    </div>
-                    <span class="font-bold text-gray-900">Legal Firms</span>
-                </div>
-
-                <div class="flex flex-col items-center gap-3 group">
-                    <div
-                        class="w-20 h-20 bg-ptc-beige rounded-full flex items-center justify-center shadow-sm group-hover:shadow-lg group-hover:bg-ptc-green transition-all duration-300"
-                    >
-                        <span
-                            class="text-3xl group-hover:scale-110 transition-transform duration-300"
-                            >🏥</span
-                        >
-                    </div>
-                    <span class="font-bold text-gray-900">Medical Offices</span>
-                </div>
-
-                <div class="flex flex-col items-center gap-3 group">
-                    <div
-                        class="w-20 h-20 bg-ptc-beige rounded-full flex items-center justify-center shadow-sm group-hover:shadow-lg group-hover:bg-ptc-green transition-all duration-300"
-                    >
-                        <span
-                            class="text-3xl group-hover:scale-110 transition-transform duration-300"
-                            >🏪</span
-                        >
-                    </div>
-                    <span class="font-bold text-gray-900">Retailers</span>
-                </div>
-
-                <div class="flex flex-col items-center gap-3 group">
-                    <div
-                        class="w-20 h-20 bg-ptc-beige rounded-full flex items-center justify-center shadow-sm group-hover:shadow-lg group-hover:bg-ptc-green transition-all duration-300"
-                    >
-                        <span
-                            class="text-3xl group-hover:scale-110 transition-transform duration-300"
-                            >🏢</span
-                        >
-                    </div>
-                    <span class="font-bold text-gray-900"
-                        >Corporate Offices</span
-                    >
-                </div>
-
-                <div class="flex flex-col items-center gap-3 group">
-                    <div
-                        class="w-20 h-20 bg-ptc-beige rounded-full flex items-center justify-center shadow-sm group-hover:shadow-lg group-hover:bg-ptc-green transition-all duration-300"
-                    >
-                        <span
-                            class="text-3xl group-hover:scale-110 transition-transform duration-300"
-                            >🏛️</span
-                        >
-                    </div>
-                    <span class="font-bold text-gray-900">Government</span>
-                </div>
-            </div>
-        </Section>
-
-        <!-- JSON-LD Breadcrumb Schema -->
-        <script
-            type="application/ld+json"
-            set:html={JSON.stringify(breadcrumbSchema)}
-        />
-
-        <!-- Service Options Section -->
-        <Section background="gray" class="py-24">
-            <div class="text-center mb-16">
-                <h2
-                    class="text-3xl sm:text-4xl lg:text-5xl font-barlow font-bold text-ptc-blue mb-6"
-                >
-                    Our Local Delivery Service Options
-                </h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    We offer flexible service levels to match your urgency and
-                    budget.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                {
-                    serviceOptions.map((option) => {
-                        const Icon = option.icon;
-                        return (
-                            <div class="relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden flex flex-col">
-                                <div class="relative h-48 overflow-hidden">
-                                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10" />
-                                    <img
-                                        src={option.image}
-                                        alt={option.title}
-                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div
-                                        class={`absolute top-4 right-4 z-20 ${option.badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm`}
-                                    >
-                                        {option.badge}
-                                    </div>
-                                </div>
-                                <div class="p-8 flex-1 flex flex-col">
-                                    <div
-                                        class={`p-4 ${option.bgColor} rounded-xl w-fit mb-6`}
-                                    >
-                                        <Icon
-                                            class={`w-8 h-8 ${option.iconColor}`}
-                                            strokeWidth={2}
-                                        />
-                                    </div>
-                                    <h3 class="text-2xl font-barlow font-bold text-gray-900 mb-4 group-hover:text-ptc-green transition-colors">
-                                        {option.title}
-                                    </h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        {option.description}
-                                    </p>
-                                </div>
-                            </div>
-                        );
-                    })
-                }
-            </div>
-        </Section>
-
-        <!-- Why Choose Us Section -->
-        <Section background="white" class="py-24">
-            <div class="text-center mb-16">
-                <h2
-                    class="text-3xl sm:text-4xl lg:text-5xl font-barlow font-bold text-ptc-blue mb-6"
-                >
-                    Why Choose Personal Touch Courier for Local Courier Delivery
-                </h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Our service is built on a promise of reliability,
-                    professionalism, and personal attention.
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-6">
-                {
-                    features.map((feature, index) => {
-                        const Icon = feature.icon;
-                        return (
-                            <div
-                                class={`bg-ptc-beige/50 rounded-2xl p-8 hover:bg-ptc-beige transition-colors duration-300 ${index === features.length - 1 ? "lg:col-span-2 lg:max-w-2xl lg:mx-auto" : ""}`}
-                            >
-                                <div class="flex items-start gap-5">
-                                    <div class="shrink-0 p-3 bg-ptc-green/10 rounded-xl">
-                                        <Icon
-                                            class="w-7 h-7 text-ptc-green"
-                                            strokeWidth={2}
-                                        />
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-barlow font-bold text-gray-900 mb-3">
-                                            {feature.title}
-                                        </h3>
-                                        <p class="text-gray-600 leading-relaxed">
-                                            {feature.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })
-                }
-            </div>
-        </Section>
-
-        <!-- Use Cases / Narrative Section (Moved) -->
-        <Section background="gray" class="py-24">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="relative">
-                    <div
-                        class="absolute inset-0 bg-ptc-green/10 rounded-3xl transform rotate-3 scale-105 z-0"
-                    >
-                    </div>
-                    <img
-                        src="https://images.pexels.com/photos/6169033/pexels-photo-6169033.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Professional courier delivering package in Ottawa"
-                        class="relative z-10 rounded-2xl shadow-xl w-full object-cover h-[500px]"
-                    />
-                </div>
-
-                <div class="prose prose-lg max-w-none text-gray-600">
-                    <h2
-                        class="text-3xl sm:text-4xl font-barlow font-bold text-ptc-blue mb-6 not-prose"
-                    >
-                        When Time is Critical, Trust is Non-Negotiable
-                    </h2>
-                    <p class="text-lg leading-relaxed text-gray-600 mb-8">
-                        At Personal Touch Courier, we understand that for
-                        professional services, an urgent delivery isn't just
-                        about speed—it's about absolute security and compliance.
-                        Our Local Courier Delivery is the specialized solution
-                        for Ottawa businesses, ensuring your most sensitive
-                        documents and time-critical parcels are handled with the
-                        discretion and professionalism your firm demands.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-6 mt-8 not-prose">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="p-2 bg-ptc-green/10 rounded-lg shrink-0"
-                            >
-                                <Shield class="w-5 h-5 text-ptc-green" />
-                            </div>
-                            <span class="font-bold text-gray-900 leading-tight"
-                                >Mission-Critical Compliance</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="p-2 bg-ptc-green/10 rounded-lg shrink-0"
-                            >
-                                <Zap class="w-5 h-5 text-ptc-green" />
-                            </div>
-                            <span class="font-bold text-gray-900 leading-tight"
-                                >Dedicated Urgency</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="p-2 bg-ptc-green/10 rounded-lg shrink-0"
-                            >
-                                <Users class="w-5 h-5 text-ptc-green" />
-                            </div>
-                            <span class="font-bold text-gray-900 leading-tight"
-                                >Local Team, Single Chain of Custody</span
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Section>
-    </main>
-
-    <Footer />
-</Layout>
+    heroImage={heroImage}
+    heroTitle={heroTitle}
+    heroSubtitle={heroSubtitle}
+    heroIcon={Package}
+    heroIconText={heroIconText}
+    breadcrumbs={breadcrumbs}
+    serviceOptionsTitle={serviceOptionsTitle}
+    serviceOptionsDescription={serviceOptionsDescription}
+    serviceOptions={serviceOptions}
+    featuresTitle={featuresTitle}
+    featuresDescription={featuresDescription}
+    features={features}
+    introImage={introImage}
+    introTitle={introTitle}
+    introText={introText}
+    introSubPoints={introSubPoints}
+/>

@@ -1,0 +1,143 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import {
+    Truck,
+    Zap,
+    Calendar,
+    Shield,
+    Clock,
+    MapPin,
+    Monitor,
+    Users,
+    Box,
+    Package,
+} from "lucide-react";
+
+const heroTitle =
+    "Heavy Lifting, Light Logistics. Local Freight Delivery You Can Trust.";
+const heroSubtitle =
+    "Secure, professional transport for all your oversized, bulk, or palletized shipments within the National Capital Region. Get reliable same-day scheduling for your commercial goods and equipment.";
+const heroImage =
+    "https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1600";
+const heroIconText = "Local Freight Service";
+
+const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+    {
+        name: "Local Freight Delivery Ottawa",
+        url: "/services/local-freight-delivery-ottawa",
+    },
+];
+
+const serviceOptionsTitle = "Your Local Freight Service Options";
+const serviceOptionsDescription =
+    "We offer specialized freight solutions to keep your supply chain moving efficiently.";
+
+const serviceOptions = [
+    {
+        icon: Zap,
+        title: "Same-Day Freight",
+        description:
+            "Rapid Scheduling Guarantee. When time is critical for site delivery or large equipment moves, rely on our fastest option to keep your project or assembly line running.",
+        bgColor: "bg-red-500/10",
+        iconColor: "text-red-500",
+        badge: "CRITICAL",
+        badgeColor: "bg-red-500",
+        image: "https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+    {
+        icon: Calendar,
+        title: "Scheduled LTL Transport",
+        description:
+            "Cost-Efficient Bulk Moving. Our Less Than Truckload (LTL) service is perfect for consistent, palletized shipments and bulk inventory that require predictable daily or weekly routes.",
+        bgColor: "bg-blue-500/10",
+        iconColor: "text-blue-500",
+        badge: "EFFICIENT",
+        badgeColor: "bg-blue-500",
+        image: "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+    {
+        icon: Truck,
+        title: "Dedicated Freight Routes",
+        description:
+            "Custom Contract Logistics. Utilize our drivers and vehicles for exclusive, custom routes built specifically around your high-volume distribution or warehousing schedule.",
+        bgColor: "bg-ptc-green/10",
+        iconColor: "text-ptc-green",
+        badge: "CUSTOM",
+        badgeColor: "bg-ptc-green",
+        image: "https://images.pexels.com/photos/2800363/pexels-photo-2800363.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+];
+
+const featuresTitle =
+    "Why Choose Personal Touch Courier for Local Freight Delivery";
+const featuresDescription =
+    "Our service is built on capacity, capability, and trusted handling for your commercial goods.";
+
+const features = [
+    {
+        icon: Truck,
+        title: "Capacity and Capability",
+        description:
+            "From single pallets to bulk material and heavy equipment, our modern fleet is equipped to handle complex commercial and industrial requirements within the city.",
+    },
+    {
+        icon: Shield,
+        title: "Safe, Vetted Handling",
+        description:
+            "Our trained teams specialize in secure loading, transport, and unloading of goods, minimizing the risk of damage to valuable inventory and equipment.",
+    },
+    {
+        icon: Clock,
+        title: "Flexible Scheduling",
+        description:
+            "We offer flexible pickup and delivery windows, minimizing disruption to your dock operations and ensuring smooth coordination with your warehouse team.",
+    },
+    {
+        icon: MapPin,
+        title: "Local Market Knowledge",
+        description:
+            "Our Ottawa-based drivers know the local industrial parks, job sites, and retail centers for efficient, last-mile commercial delivery.",
+    },
+    {
+        icon: Monitor,
+        title: "Simplified Process",
+        description:
+            "Manage bookings, get instant quotes, and track your freight in real-time through our simple online platform and dedicated customer support team.",
+    },
+];
+
+const introImage =
+    "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=800";
+const introTitle = "Freight Delivered: Reliability in Every Shipment.";
+const introText =
+    "Your commercial success relies on a logistics partner that performs. Our Local Freight Delivery service is the trusted solution for Ottawa businesses, ensuring your supply chain remains fluid, your inventory moves safely, and your site deliveries arrive on schedule. We specialize in eliminating bottlenecks between your warehouse and your client.";
+
+const introSubPoints = [
+    { icon: Truck, text: "Dedicated Fleet Assets" },
+    { icon: Users, text: "Site & Dock Coordination" },
+    { icon: Box, text: "Secure Pallet & Bulk Handling" },
+];
+---
+
+<ServiceLayout
+    title="Local Freight Delivery Ottawa | Personal Touch Courier"
+    description="Need to move bulk goods or heavy equipment in Ottawa? We offer fast, reliable Local Freight Delivery, including LTL and palletized transport, handled with the Personal Touch."
+    heroImage={heroImage}
+    heroTitle={heroTitle}
+    heroSubtitle={heroSubtitle}
+    heroIcon={Truck}
+    heroIconText={heroIconText}
+    breadcrumbs={breadcrumbs}
+    serviceOptionsTitle={serviceOptionsTitle}
+    serviceOptionsDescription={serviceOptionsDescription}
+    serviceOptions={serviceOptions}
+    featuresTitle={featuresTitle}
+    featuresDescription={featuresDescription}
+    features={features}
+    introImage={introImage}
+    introTitle={introTitle}
+    introText={introText}
+    introSubPoints={introSubPoints}
+/>

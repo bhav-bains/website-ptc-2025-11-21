@@ -1,0 +1,142 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import {
+    Truck,
+    Map,
+    Calendar,
+    User,
+    DollarSign,
+    TrendingUp,
+    Users,
+    Star,
+    Target,
+    Shield,
+    FileText,
+} from "lucide-react";
+
+const heroTitle =
+    "Your Dedicated Fleet. Our Professional Drivers. Zero Overhead.";
+const heroSubtitle =
+    "Customized delivery routes, scheduled runs, and reliable contract logistics built specifically for your daily or weekly business needs across the National Capital Region.";
+const heroImage =
+    "https://images.pexels.com/photos/1036856/pexels-photo-1036856.jpeg?auto=compress&cs=tinysrgb&w=1600";
+const heroIconText = "Dedicated Transportation";
+
+const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+    {
+        name: "Dedicated Transportation Ottawa",
+        url: "/services/dedicated-transportation-ottawa",
+    },
+];
+
+const serviceOptionsTitle = "Custom Logistics Built Around Your Business";
+const serviceOptionsDescription =
+    "We create logistics solutions that integrate seamlessly with your operations.";
+
+const serviceOptions = [
+    {
+        icon: Map,
+        title: "Custom Route Design",
+        description:
+            "Optimized for Efficiency. We analyze your delivery points and volumes to build the most direct, cost-efficient, and reliable daily or weekly route possible.",
+        bgColor: "bg-blue-500/10",
+        iconColor: "text-blue-500",
+        badge: "OPTIMIZED",
+        badgeColor: "bg-blue-500",
+        image: "/custom-route-map.png",
+    },
+    {
+        icon: Calendar,
+        title: "Scheduled Contract Runs",
+        description:
+            "Predictable Service. Secure dedicated delivery slots for recurring client drops, inter-branch transfers, or regular distribution needs. Your schedule, guaranteed.",
+        bgColor: "bg-ptc-green/10",
+        iconColor: "text-ptc-green",
+        badge: "PREDICTABLE",
+        badgeColor: "bg-ptc-green",
+        image: "https://images.pexels.com/photos/4481329/pexels-photo-4481329.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+    {
+        icon: User,
+        title: "Dedicated Driver / Vehicle",
+        description:
+            "Extended Branding. Utilize our professional drivers and potentially a dedicated, branded vehicle for a seamless extension of your company’s team and reputation.",
+        bgColor: "bg-purple-500/10",
+        iconColor: "text-purple-500",
+        badge: "PREMIUM",
+        badgeColor: "bg-purple-500",
+        image: "https://images.pexels.com/photos/8062276/pexels-photo-8062276.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+];
+
+const featuresTitle = "The Smart Way to Scale Your Logistics";
+const featuresDescription =
+    "Gain the benefits of a private fleet without the financial and operational burden.";
+
+const features = [
+    {
+        icon: DollarSign,
+        title: "Cost-Efficiency & Savings",
+        description:
+            "Eliminate the costs associated with owning, insuring, maintaining, and staffing an internal fleet (salaries, fuel, insurance, repairs).",
+    },
+    {
+        icon: TrendingUp,
+        title: "Scalability & Flexibility",
+        description:
+            "Easily adjust your capacity during seasonal peaks or shifts in demand without having to hire or lay off staff. Your logistics scale with your business.",
+    },
+    {
+        icon: Users,
+        title: "Reliable Staffing",
+        description:
+            "We provide vetted, reliable, and professional drivers. Never worry about driver absenteeism, training, or licensing again.",
+    },
+    {
+        icon: Star,
+        title: "Enhanced Branding",
+        description:
+            "Our dedicated drivers act as brand ambassadors, wearing company uniforms and maintaining professional interactions with your clients.",
+    },
+    {
+        icon: Target,
+        title: "Focus on Core Business",
+        description:
+            "Free up management time and capital spent on logistics operations, allowing you to refocus on core strategy, product, and client growth.",
+    },
+];
+
+const introImage = "/dedicated-fleet-van.png";
+const introTitle = "Outsource Your Fleet, Retain Complete Control.";
+const introText =
+    "Dedicated Transportation is the perfect logistics solution for Ottawa businesses with consistent, high-volume, or complex delivery needs. We provide the efficiency, reliability, and security of a private fleet without the financial burden. This service integrates seamlessly into your supply chain, giving you predictable costs and guaranteed scheduling, all managed with the Personal Touch.";
+
+const introSubPoints = [
+    { icon: Shield, text: "Guaranteed Daily Runs" },
+    { icon: FileText, text: "Simplified Invoicing" },
+    { icon: Target, text: "Custom Fleet Oversight" },
+];
+---
+
+<ServiceLayout
+    title="Dedicated Transportation Ottawa | Personal Touch Courier"
+    description="Outsource your logistics with our Dedicated Transportation service in Ottawa. Get custom delivery routes, contract-based schedules, and your own fleet, without the overhead."
+    heroImage={heroImage}
+    heroTitle={heroTitle}
+    heroSubtitle={heroSubtitle}
+    heroIcon={Truck}
+    heroIconText={heroIconText}
+    breadcrumbs={breadcrumbs}
+    serviceOptionsTitle={serviceOptionsTitle}
+    serviceOptionsDescription={serviceOptionsDescription}
+    serviceOptions={serviceOptions}
+    featuresTitle={featuresTitle}
+    featuresDescription={featuresDescription}
+    features={features}
+    introImage={introImage}
+    introTitle={introTitle}
+    introText={introText}
+    introSubPoints={introSubPoints}
+/>
