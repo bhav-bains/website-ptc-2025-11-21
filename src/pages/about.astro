@@ -3,19 +3,276 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Section from "../components/ui/Section.astro";
+import Button from "../components/ui/Button.astro";
+import {
+    ShieldCheck,
+    MapPin,
+    UserCheck,
+    Phone,
+    ArrowRight,
+} from "lucide-react";
+
+const teamMembers = [
+    {
+        name: "John Doe",
+        role: "Operations Manager",
+        image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400",
+    },
+    {
+        name: "Jane Smith",
+        role: "Senior Dispatcher",
+        image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
+    },
+    {
+        name: "Mike Johnson",
+        role: "Logistics Coordinator",
+        image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
+    },
+    {
+        name: "Sarah Williams",
+        role: "Customer Success",
+        image: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400",
+    },
+];
 ---
 
 <Layout
-    title="About Us | Personal Touch Courier"
-    description="Learn more about Personal Touch Courier, Ottawa's trusted local delivery partner."
+    title="About Personal Touch Courier | Our History & Mission in Ottawa"
+    description="Learn the story of Personal Touch Courier. Established in 1987, we are an Ottawa-based, Canadian-owned company dedicated to reliable service, professionalism, and community roots."
 >
     <Header />
+
     <main>
-        <Section class="py-24 text-center">
-            <h1 class="text-4xl font-bold mb-4">About Us</h1>
-            <p class="text-xl text-gray-600">
-                Coming Soon. We are building our story.
-            </p>
+        <!-- SECTION 1: Hero Banner -->
+        <Section
+            container={false}
+            class="relative min-h-[60vh] flex items-center justify-center overflow-hidden p-0"
+        >
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-black/60 z-10"></div>
+                <img
+                    src="/hero-bg.png"
+                    alt="Personal Touch Courier History"
+                    class="w-full h-full object-cover scale-105"
+                />
+            </div>
+
+            <div
+                class="relative z-20 text-center max-w-4xl mx-auto px-4 pt-24 pb-12"
+            >
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-barlow font-bold text-white mb-6 leading-tight"
+                >
+                    Your Ottawa Logistics Partner. Since 1987.
+                </h1>
+                <p
+                    class="text-xl sm:text-2xl text-gray-100 mb-10 max-w-2xl mx-auto leading-relaxed"
+                >
+                    We are a local, Canadian-owned company dedicated to
+                    providing dependable courier and freight services with a
+                    focus on real people, real support, and unwavering
+                    professionalism.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="#team" variant="white" size="lg">
+                        Meet Our Team
+                    </Button>
+                    <Button href="/services" variant="glass" size="lg">
+                        View Our Services
+                    </Button>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 2: Our Story and Mission -->
+        <Section background="white" class="py-24">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2
+                    class="text-3xl sm:text-4xl font-barlow font-bold text-ptc-blue mb-8"
+                >
+                    Built in Ottawa, Rooted in Reliability.
+                </h2>
+                <div
+                    class="space-y-6 text-lg text-gray-600 leading-relaxed text-left sm:text-center"
+                >
+                    <p>
+                        Personal Touch Courier was founded in Ottawa in 1987,
+                        specializing in just that—the personal touch. For over
+                        three decades, our objective has been to build a fast,
+                        reliable, and efficient logistics service that serves
+                        the unique needs of our community.
+                    </p>
+                    <p>
+                        Our core mission is simple: to provide value, service,
+                        efficiency, and reliability for our clients and those
+                        they serve. We have grown from a local courier service
+                        into a comprehensive logistics partner, handling
+                        everything from urgent same-day parcels to national and
+                        international deliveries.
+                    </p>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 3: Our Core Values -->
+        <Section background="gray" class="py-24">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl sm:text-4xl font-barlow font-bold text-ptc-green mb-6"
+                >
+                    The Three Pillars of the Personal Touch
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div
+                    class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
+                >
+                    <div
+                        class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center text-ptc-green mb-6"
+                    >
+                        <ShieldCheck size={32} />
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-barlow text-gray-900 mb-4"
+                    >
+                        Worry-Free Reliability
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        We eliminate the uncertainty in logistics. Our
+                        commitment to clear communication and dependable drivers
+                        ensures your shipment is handled correctly the first
+                        time, every time.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div
+                    class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
+                >
+                    <div
+                        class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center text-ptc-green mb-6"
+                    >
+                        <MapPin size={32} />
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-barlow text-gray-900 mb-4"
+                    >
+                        Local Accountability
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        We are proudly local and Canadian-owned. This means you
+                        deal directly with our Ottawa team, securing real
+                        support and instant local market knowledge that national
+                        carriers cannot match.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div
+                    class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
+                >
+                    <div
+                        class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center text-ptc-green mb-6"
+                    >
+                        <UserCheck size={32} />
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-barlow text-gray-900 mb-4"
+                    >
+                        Unwavering Professionalism
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        We employ neat, courteous, and dependable drivers who
+                        act as professional extensions of your own business,
+                        ensuring the service delivered reflects positively on
+                        you.
+                    </p>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 4: Local Roots & Expertise -->
+        <Section background="white" class="py-24">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div
+                        class="absolute inset-0 bg-ptc-green/5 rounded-2xl transform translate-x-4 translate-y-4"
+                    >
+                    </div>
+                    <img
+                        src="/ottawa-expertise.jpg"
+                        alt="Ottawa Cityscape"
+                        class="relative rounded-2xl shadow-xl w-full h-full object-cover"
+                    />
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2
+                        class="text-3xl sm:text-4xl font-barlow font-bold text-gray-900 mb-6"
+                    >
+                        Ottawa's Courier Experts—Born and Built Here.
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        We are not just a logistics provider; we are your
+                        neighbors and your partners. Our drivers know the
+                        streets of the National Capital Region intimately—from
+                        the high-rises downtown to the industrial parks of the
+                        surrounding area.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        We take pride in supporting our local economy and
+                        delivering with the efficiency only deep local knowledge
+                        can provide. When you partner with us, you are
+                        supporting Canadian business and getting the fastest
+                        courier service in the greater Ottawa area.
+                    </p>
+                    <Button href="/contact" variant="outline">
+                        Connect with Local Experts
+                    </Button>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 5: Meet the Team -->
+        <Section background="gray" class="py-24" id="team">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl sm:text-4xl font-barlow font-bold text-gray-900 mb-6"
+                >
+                    The Team Behind the Promise
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    At the heart of our service are the real people who ensure
+                    your packages move safely and quickly. Meet the leadership
+                    and dispatch team committed to your success.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {
+                    teamMembers.map((member) => (
+                        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+                            <div class="h-64 overflow-hidden bg-gray-200">
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">
+                                    {member.name}
+                                </h3>
+                                <p class="text-ptc-green font-medium">
+                                    {member.role}
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
         </Section>
     </main>
     <Footer />

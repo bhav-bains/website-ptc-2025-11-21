@@ -3,19 +3,472 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Section from "../components/ui/Section.astro";
+import Button from "../components/ui/Button.astro";
+import {
+    Phone,
+    FileText,
+    Truck,
+    Clock,
+    Map,
+    DollarSign,
+    Globe,
+} from "lucide-react";
+
+// Zone Rate Data
+const zoneRates = [
+    { zone: "1", nonRush: "$5.20", rush: "$6.60", personal: "$9.00" },
+    { zone: "2", nonRush: "$6.60", rush: "$8.05", personal: "$11.00" },
+    { zone: "3", nonRush: "$11.50", rush: "$14.40", personal: "$19.00" },
+    { zone: "4", nonRush: "$13.55", rush: "$17.80", personal: "$24.00" },
+    { zone: "5", nonRush: "$15.80", rush: "$24.40", personal: "$30.00" },
+    { zone: "6", nonRush: "$24.40", rush: "$28.75", personal: "$33.00" },
+    { zone: "7", nonRush: "$30.25", rush: "$43.12", personal: "$50.00" },
+];
 ---
 
 <Layout
-    title="Pricing | Personal Touch Courier"
-    description="Transparent pricing for Ottawa courier services."
+    title="Courier Pricing & Rates Ottawa | Transparent Delivery Costs"
+    description="View transparent pricing for Personal Touch Courier. Includes local zone rates, same-day service tiers, freight hourly rates, and out-of-town costs."
 >
     <Header />
+
     <main>
-        <Section class="py-24 text-center">
-            <h1 class="text-4xl font-bold mb-4">Pricing</h1>
-            <p class="text-xl text-gray-600">
-                Coming Soon. Flexible rates for every business.
-            </p>
+        <!-- SECTION 1: Hero Banner -->
+        <Section
+            container={false}
+            class="relative min-h-[50vh] flex items-center justify-center overflow-hidden p-0"
+        >
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-black/70 z-10"></div>
+                <img
+                    src="/hero-bg.png"
+                    alt="Ottawa Courier Pricing"
+                    class="w-full h-full object-cover scale-105"
+                />
+            </div>
+
+            <div
+                class="relative z-20 text-center max-w-4xl mx-auto px-4 pt-20 pb-12"
+            >
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-barlow font-bold text-white mb-6 leading-tight"
+                >
+                    Transparent Pricing. Built for Ottawa Businesses.
+                </h1>
+                <p
+                    class="text-xl sm:text-2xl text-gray-100 mb-10 max-w-2xl mx-auto leading-relaxed"
+                >
+                    No hidden fees, no complexity. View our rates for local
+                    courier, out-of-town, and commercial freight transport, or
+                    request a personalized contract quote.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="#quote" variant="white" size="lg">
+                        Request a Personalized Quote
+                    </Button>
+                    <Button href="tel:613-723-5891" variant="glass" size="lg">
+                        <Phone class="w-5 h-5 mr-2" /> Call Dispatch: (613) 723-5891
+                    </Button>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 2: Local Zone Rate Structure -->
+        <Section background="white" class="py-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-3xl sm:text-4xl font-barlow font-bold text-ptc-blue mb-6"
+                    >
+                        Local Courier Rates by Zone & Service Level
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Pricing is calculated based on our seven Ottawa service
+                        zones. Find your zone on the map below, then use the
+                        table to determine the exact rate for your chosen speed.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Map Column -->
+                    <div
+                        class="bg-gray-50 rounded-2xl p-4 border border-gray-100 shadow-sm"
+                    >
+                        <img
+                            src="/pricing-zones.png"
+                            alt="Personal Touch Courier Zone Map"
+                            class="w-full h-auto rounded-xl"
+                        />
+                        <div
+                            class="mt-4 flex items-start gap-3 p-4 bg-blue-50 text-blue-800 rounded-lg text-sm"
+                        >
+                            <Map class="w-5 h-5 shrink-0 mt-0.5" />
+                            <p>
+                                Map zones are approximate. Please call dispatch
+                                for precise zone confirmation if near a
+                                boundary.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Table Column -->
+                    <div>
+                        <div
+                            class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm bg-white"
+                        >
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-ptc-blue text-white">
+                                        <th
+                                            class="p-4 text-center font-bold font-barlow text-lg border-r border-white/20"
+                                            >ZONE</th
+                                        >
+                                        <th
+                                            class="p-4 text-center font-bold font-barlow text-lg border-r border-white/20"
+                                        >
+                                            Non-Rush<br /><span
+                                                class="text-xs font-normal opacity-90"
+                                                >(4 hours)</span
+                                            >
+                                        </th>
+                                        <th
+                                            class="p-4 text-center font-bold font-barlow text-lg border-r border-white/20"
+                                        >
+                                            Rush<br /><span
+                                                class="text-xs font-normal opacity-90"
+                                                >(2 hours)</span
+                                            >
+                                        </th>
+                                        <th
+                                            class="p-4 text-center font-bold font-barlow text-lg"
+                                        >
+                                            Personal<br /><span
+                                                class="text-xs font-normal opacity-90"
+                                                >(1 hour)</span
+                                            >
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        zoneRates.map((rate, index) => (
+                                            <tr
+                                                class={
+                                                    index % 2 === 0
+                                                        ? "bg-white"
+                                                        : "bg-gray-50"
+                                                }
+                                            >
+                                                <td class="p-4 text-center font-bold text-ptc-blue border-r border-gray-100">
+                                                    {rate.zone}
+                                                </td>
+                                                <td class="p-4 text-center text-gray-700 border-r border-gray-100">
+                                                    {rate.nonRush}
+                                                </td>
+                                                <td class="p-4 text-center text-gray-700 border-r border-gray-100 font-semibold">
+                                                    {rate.rush}
+                                                </td>
+                                                <td class="p-4 text-center text-ptc-green font-bold">
+                                                    {rate.personal}
+                                                </td>
+                                            </tr>
+                                        ))
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div
+                            class="mt-6 flex items-start gap-2 text-gray-500 text-sm italic"
+                        >
+                            <div
+                                class="mt-1 w-4 h-4 bg-ptc-green/20 rounded-full flex items-center justify-center shrink-0"
+                            >
+                                <span
+                                    class="block w-2 h-2 bg-ptc-green rounded-full"
+                                ></span>
+                            </div>
+                            <p>
+                                All rates include 15 lbs. FREE and 10 minutes of
+                                FREE Waiting Time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 3: Freight, Hourly & Specialized Charges -->
+        <Section background="gray" class="py-24">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl sm:text-4xl font-barlow font-bold text-gray-900 mb-6"
+                >
+                    Commercial Freight and Hourly Rates
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    For bulk shipments, dedicated routes, or jobs requiring
+                    specific vehicle types, we offer predictable hourly and
+                    mileage rates.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Hourly Rates -->
+                <div
+                    class="bg-white rounded-xl shadow-sm p-8 border border-gray-100"
+                >
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="p-3 bg-ptc-green/10 rounded-lg text-ptc-green"
+                        >
+                            <Clock size={28} />
+                        </div>
+                        <h3
+                            class="text-2xl font-barlow font-bold text-gray-900"
+                        >
+                            Standard Hourly Rates
+                        </h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li
+                            class="flex justify-between items-center p-3 rounded-lg bg-gray-50"
+                        >
+                            <span class="font-medium text-gray-700"
+                                >Cargo Van</span
+                            >
+                            <span class="font-bold text-ptc-blue"
+                                >$65.00 / Hr</span
+                            >
+                        </li>
+                        <li
+                            class="flex justify-between items-center p-3 rounded-lg bg-gray-50"
+                        >
+                            <span class="font-medium text-gray-700"
+                                >5 Ton Truck</span
+                            >
+                            <span class="font-bold text-ptc-blue"
+                                >$90.00 / Hr</span
+                            >
+                        </li>
+                        <li
+                            class="flex justify-between items-center p-3 rounded-lg bg-gray-50"
+                        >
+                            <span class="font-medium text-gray-700"
+                                >Extra Man (Labor)</span
+                            >
+                            <span class="font-bold text-ptc-blue"
+                                >$45.00 / Hr</span
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Other Charges -->
+                <div
+                    class="bg-white rounded-xl shadow-sm p-8 border border-gray-100"
+                >
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="p-3 bg-ptc-blue/10 rounded-lg text-ptc-blue"
+                        >
+                            <FileText size={28} />
+                        </div>
+                        <h3
+                            class="text-2xl font-barlow font-bold text-gray-900"
+                        >
+                            Common Service Charges
+                        </h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li
+                            class="flex justify-between items-center border-b border-gray-100 pb-2"
+                        >
+                            <span class="text-gray-600"
+                                >Over-weight (> 15lbs)</span
+                            >
+                            <span class="font-semibold text-gray-900"
+                                >$0.10 / lb</span
+                            >
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-gray-100 pb-2"
+                        >
+                            <span class="text-gray-600"
+                                >Waiting Time (> 10 mins)</span
+                            >
+                            <span class="font-semibold text-gray-900"
+                                >$0.75 / min</span
+                            >
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-gray-100 pb-2"
+                        >
+                            <span class="text-gray-600">Return Trip</span>
+                            <span class="font-semibold text-gray-900"
+                                >2 x Rate</span
+                            >
+                        </li>
+                        <li class="flex justify-between items-center pt-2">
+                            <span class="text-gray-600">Truck Call Fee</span>
+                            <span class="font-semibold text-gray-900"
+                                >$15.00</span
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 4: Out-of-Town & Long Distance -->
+        <Section background="white" class="py-24">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-3xl sm:text-4xl font-barlow font-bold text-ptc-blue mb-6"
+                    >
+                        National & International Transport
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        For direct drives outside of Ottawa or overnight service
+                        across the continent, we offer competitive mileage and
+                        fixed base rates.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Direct Drive Rates -->
+                    <div>
+                        <h3
+                            class="flex items-center gap-3 text-xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4"
+                        >
+                            <Truck class="text-ptc-green" /> Out-of-Town Direct Drives
+                            <span
+                                class="text-sm font-normal text-gray-500 ml-auto"
+                                >(Same Day)</span
+                            >
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center">
+                                <span class="text-gray-700">Car</span>
+                                <span class="font-bold text-ptc-blue"
+                                    >$2.15 / km</span
+                                >
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="text-gray-700">Cargo Van</span>
+                                <span class="font-bold text-ptc-blue"
+                                    >$2.75 / km <span
+                                        class="text-xs font-normal text-gray-500 block text-right"
+                                        >(+15% fuel)</span
+                                    ></span
+                                >
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="text-gray-700">5 Ton Truck</span>
+                                <span class="font-bold text-ptc-blue"
+                                    >$3.25 / km <span
+                                        class="text-xs font-normal text-gray-500 block text-right"
+                                        >(+15% fuel)</span
+                                    ></span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Overnight Rates -->
+                    <div>
+                        <h3
+                            class="flex items-center gap-3 text-xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4"
+                        >
+                            <Globe class="text-ptc-green" /> Overnight & International
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center">
+                                <div>
+                                    <span
+                                        class="block text-gray-900 font-medium"
+                                        >Major Canadian Cities</span
+                                    >
+                                    <span class="text-sm text-gray-500"
+                                        >Montreal, Toronto, etc.</span
+                                    >
+                                </div>
+                                <span class="font-bold text-ptc-blue"
+                                    >From $36.75+</span
+                                >
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <div>
+                                    <span
+                                        class="block text-gray-900 font-medium"
+                                        >USA Service</span
+                                    >
+                                    <span class="text-sm text-gray-500"
+                                        >Cross-border logistics</span
+                                    >
+                                </div>
+                                <span class="font-bold text-ptc-blue"
+                                    >From $53.00</span
+                                >
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <div>
+                                    <span
+                                        class="block text-gray-900 font-medium"
+                                        >Worldwide Service</span
+                                    >
+                                    <span class="text-sm text-gray-500"
+                                        >Global freight</span
+                                    >
+                                </div>
+                                <span class="text-ptc-green font-semibold"
+                                    >Call for Quote</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 5: Closing CTA Banner -->
+        <Section class="bg-[#F5F5F0] text-center py-24" id="quote">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-center mb-6">
+                    <div
+                        class="w-16 h-16 bg-ptc-green/10 rounded-full flex items-center justify-center text-ptc-green"
+                    >
+                        <DollarSign size={32} />
+                    </div>
+                </div>
+                <h2
+                    class="text-3xl sm:text-4xl font-barlow font-bold text-ptc-blue mb-6"
+                >
+                    Need Negotiated Rates for High Volume?
+                </h2>
+                <p
+                    class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed"
+                >
+                    The best way to achieve the most cost-efficient pricing is
+                    by opening a business account. Contact us today to discuss
+                    preferred rates for volume commitments, dedicated routes,
+                    and long-term contracts.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact" variant="primary" size="lg">
+                        Request a Personalized Quote
+                    </Button>
+                    <Button
+                        href="https://personaltouchcourier.dsapp.io/Account/Login"
+                        target="_blank"
+                        variant="outline"
+                        size="lg"
+                    >
+                        Login to DispatchScience
+                    </Button>
+                </div>
+            </div>
         </Section>
     </main>
     <Footer />

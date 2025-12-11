@@ -3,19 +3,249 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Section from "../components/ui/Section.astro";
+import Button from "../components/ui/Button.astro";
+import Card from "../components/ui/Card.astro";
+import {
+    Phone,
+    Mail,
+    Clock,
+    MapPin,
+    Calculator,
+    MessageSquare,
+    UserCheck,
+} from "lucide-react";
 ---
 
 <Layout
-    title="Contact Us | Personal Touch Courier"
-    description="Get in touch with Personal Touch Courier for quotes and support."
+    title="Contact Personal Touch Courier | Request a Quote or Call"
+    description="Ready to move with Personal Touch? Get an instant quote, talk to our dispatch team, or send a general inquiry. Your Ottawa logistics partner is ready to help."
 >
     <Header />
+
     <main>
-        <Section class="py-24 text-center">
-            <h1 class="text-4xl font-bold mb-4">Contact Us</h1>
-            <p class="text-xl text-gray-600">
-                Coming Soon. We'd love to hear from you.
-            </p>
+        <!-- SECTION 1: Hero Banner -->
+        <Section
+            container={false}
+            class="relative min-h-[60vh] flex items-center justify-center overflow-hidden p-0"
+        >
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-black/60 z-10"></div>
+                <img
+                    src="/hero-bg-1.png"
+                    alt="Ottawa Courier Team"
+                    class="w-full h-full object-cover scale-105"
+                />
+            </div>
+
+            <div
+                class="relative z-20 text-center max-w-4xl mx-auto px-4 pt-24 pb-12"
+            >
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-barlow font-bold text-white mb-6 leading-tight"
+                >
+                    Let's Connect. How Can We Help You Move?
+                </h1>
+                <p
+                    class="text-xl sm:text-2xl text-gray-100 mb-10 max-w-2xl mx-auto leading-relaxed"
+                >
+                    We make connecting simple. Choose your fastest path below to
+                    get pricing, start a service, or speak directly with our
+                    Ottawa-based team.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="#quote" variant="white" size="lg">
+                        Request a Quote
+                    </Button>
+                    <Button href="tel:613-723-5891" variant="glass" size="lg">
+                        <Phone class="w-5 h-5 mr-2" /> Call Us Now: (613) 723-5891
+                    </Button>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 2: Conversion Path Split -->
+        <Section background="gray" class="py-24" id="quote">
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Card 1: Request a Quote (High Intent) -->
+                <Card
+                    class="flex flex-col h-full border-t-4 border-t-ptc-green hover:shadow-2xl relative overflow-hidden group"
+                >
+                    <div
+                        class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity"
+                    >
+                        <Calculator size={120} />
+                    </div>
+                    <div
+                        class="p-2 mb-6 w-14 h-14 bg-ptc-green/10 rounded-full flex items-center justify-center text-ptc-green"
+                    >
+                        <Calculator size={28} />
+                    </div>
+                    <h2
+                        class="text-3xl font-barlow font-bold text-gray-900 mb-4"
+                    >
+                        Get an Instant Quote
+                    </h2>
+                    <p
+                        class="text-lg text-gray-600 mb-8 flex-grow leading-relaxed"
+                    >
+                        Need pricing for a specific parcel, freight shipment, or
+                        dedicated route? Tell us about your needs and we'll
+                        respond with a detailed quote quickly.
+                    </p>
+                    <Button
+                        href="mailto:ops@personaltouchcourier.com?subject=Quote%20Request"
+                        variant="primary"
+                        class="w-full justify-center"
+                    >
+                        Open Quote Request Form
+                    </Button>
+                </Card>
+
+                <!-- Card 2: General Inquiry (Support/Questions) -->
+                <Card
+                    class="flex flex-col h-full border-t-4 border-t-ptc-blue hover:shadow-2xl relative overflow-hidden group"
+                >
+                    <div
+                        class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity"
+                    >
+                        <MessageSquare size={120} />
+                    </div>
+                    <div
+                        class="p-2 mb-6 w-14 h-14 bg-ptc-blue/10 rounded-full flex items-center justify-center text-ptc-blue"
+                    >
+                        <MessageSquare size={28} />
+                    </div>
+                    <h2
+                        class="text-3xl font-barlow font-bold text-gray-900 mb-4"
+                    >
+                        Talk to Our Ottawa Team
+                    </h2>
+                    <p
+                        class="text-lg text-gray-600 mb-8 flex-grow leading-relaxed"
+                    >
+                        Have a question about our services, billing, or
+                        technical support? Use this form for general inquiries
+                        or non-urgent matters.
+                    </p>
+                    <Button
+                        href="mailto:ops@personaltouchcourier.com?subject=General%20Inquiry"
+                        variant="outline"
+                        class="w-full justify-center"
+                    >
+                        Open General Contact Form
+                    </Button>
+                </Card>
+            </div>
+        </Section>
+
+        <!-- SECTION 3: Immediate Contact Information -->
+        <Section background="white" class="py-20 border-t border-gray-100">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl sm:text-4xl font-barlow font-bold text-ptc-blue"
+                >
+                    Prefer to Talk or Email Directly?
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Phone -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-ptc-beige/30 rounded-xl hover:bg-ptc-beige transition-colors"
+                >
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm text-ptc-green mb-4"
+                    >
+                        <Phone size={28} />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">
+                        Dispatch & Quotes
+                    </h3>
+                    <a
+                        href="tel:613-723-5891"
+                        class="text-lg text-gray-600 hover:text-ptc-green font-semibold transition-colors"
+                    >
+                        (613) 723-5891
+                    </a>
+                </div>
+
+                <!-- Email -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-ptc-beige/30 rounded-xl hover:bg-ptc-beige transition-colors"
+                >
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm text-ptc-green mb-4"
+                    >
+                        <Mail size={28} />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">
+                        Operations
+                    </h3>
+                    <a
+                        href="mailto:ops@personaltouchcourier.com"
+                        class="text-lg text-gray-600 hover:text-ptc-green font-semibold transition-colors"
+                    >
+                        ops@personaltouchcourier.com
+                    </a>
+                </div>
+
+                <!-- Hours -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-ptc-beige/30 rounded-xl hover:bg-ptc-beige transition-colors"
+                >
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm text-ptc-green mb-4"
+                    >
+                        <Clock size={28} />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">
+                        Hours of Operation
+                    </h3>
+                    <p class="text-lg text-gray-600">
+                        Monday – Friday<br />
+                        7:00 AM – 5:00 PM EST
+                    </p>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="mt-12 text-center">
+                <div
+                    class="inline-flex items-center gap-2 text-gray-500 bg-gray-50 px-6 py-3 rounded-full border border-gray-100"
+                >
+                    <MapPin size={18} />
+                    <span>Our Ottawa Office: Ottawa, Ontario</span>
+                </div>
+            </div>
+        </Section>
+
+        <!-- SECTION 4: The Personal Touch Difference -->
+        <Section background="green" class="text-center py-24">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-center mb-6">
+                    <div
+                        class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm text-white"
+                    >
+                        <UserCheck size={32} />
+                    </div>
+                </div>
+                <h2
+                    class="text-3xl sm:text-4xl font-barlow font-bold text-white mb-6"
+                >
+                    What Happens Next?
+                </h2>
+                <p class="text-xl text-ptc-green-100 mb-10 leading-relaxed">
+                    Unlike automated logistics companies, when you contact
+                    Personal Touch Courier, you speak with our local team. We
+                    guarantee a prompt, personalized response from a logistics
+                    expert who is ready to find the right solution for your
+                    business.
+                </p>
+                <Button href="#quote" variant="white" size="lg">
+                    Request a Quote Now
+                </Button>
+            </div>
         </Section>
     </main>
     <Footer />
